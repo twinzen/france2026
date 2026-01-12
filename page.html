@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蔚藍海岸 4日3夜精華遊：尼斯、艾茲、摩納哥、昂蒂布</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .print-break { page-break-inside: avoid; }
+        
+        /* Tab Animation */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Map Container */
+        .map-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        /* Table enhancements */
+        td { vertical-align: top; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background-color: white; }
+            .shadow-lg { box-shadow: none; }
+            .tab-content { display: block !important; margin-bottom: 2rem; }
+            .tab-buttons { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-sky-50 text-slate-700 min-h-screen flex flex-col">
+
+    <!-- Sticky Navigation / Header -->
+    <header class="bg-sky-600 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-3">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-3">
+                <h1 class="text-xl md:text-2xl font-bold"><i class="fa-solid fa-plane-arrival mr-2"></i>蔚藍海岸 4日3夜精華遊</h1>
+                <span class="text-sky-200 text-sm hidden md:inline">尼斯 • 艾茲 • 摩納哥 • 昂蒂布</span>
+            </div>
+            
+            <!-- Tab Buttons -->
+            <div class="flex space-x-2 tab-buttons">
+                <button onclick="switchTab('itinerary')" id="btn-itinerary" class="flex-1 py-2 px-4 bg-white text-sky-600 font-bold rounded-lg shadow transition-all duration-200 hover:bg-sky-50 focus:outline-none ring-2 ring-white">
+                    <i class="fa-solid fa-list-check mr-2"></i>詳細行程
+                </button>
+                <button onclick="switchTab('attractions')" id="btn-attractions" class="flex-1 py-2 px-4 bg-sky-700 text-sky-100 font-bold rounded-lg shadow transition-all duration-200 hover:bg-sky-500 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-map-location-dot mr-2"></i>景點介紹
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto p-4 md:p-6 space-y-8 flex-grow">
+
+        <!-- ==================== PAGE 1: 行程表 (Itinerary) ==================== -->
+        <div id="itinerary-view" class="tab-content active space-y-8">
+            
+            <!-- Hotel Info Card -->
+            <section class="bg-white rounded-xl shadow-lg p-6 border-l-8 border-yellow-400">
+                <h2 class="text-2xl font-bold text-slate-800 mb-4 flex items-center">
+                    <i class="fa-solid fa-hotel text-yellow-500 mr-3"></i> 住宿資訊
+                </h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="font-bold text-lg">🏨 ibis Styles Nice Centre Port</p>
+                        <p class="text-gray-600"><i class="fa-solid fa-location-dot mr-2"></i>8 Rue Emmanuel Philibert, 06300 Nice</p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg text-sm">
+                        <span class="font-bold text-yellow-700">優點分析：</span>
+                        <ul class="list-disc list-inside mt-2 space-y-1 text-slate-700">
+                            <li>位於港口區，環境舒適寧靜。</li>
+                            <li>交通便利：步行至 Nice Riquier 車站或 Tram 2 (Port Lympia) 都很近。</li>
+                            <li>生活機能佳：附近有超市 (Monoprix) 及多間優質餐廳。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Day 1 -->
+            <section class="bg-white rounded-xl shadow-lg overflow-hidden print-break">
+                <div class="bg-slate-800 text-white p-4 flex flex-col md:flex-row justify-between items-center gap-3">
+                    <h3 class="text-xl font-bold">Day 1：抵達尼斯 & 舊城區初體驗</h3>
+                    <div class="flex gap-2">
+                        <a href="https://www.google.com/maps/dir/ibis+Styles+Nice+Centre+Port,+Rue+Emmanuel+Philibert,+Nice,+France/Chez+René+Socca,+Rue+Miralheti,+Nice,+France/Place+Garibaldi,+Nice,+France/Promenade+du+Paillon,+Nice,+France/Fenocchio,+Place+Rossetti,+Nice,+France/Peixes,+Rue+Bonaparte,+Nice,+France" target="_blank" class="text-xs bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 flex items-center font-bold transition shadow-md">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i>開啟 Day 1 步行路線
+                        </a>
+                        <button onclick="switchTab('attractions')" class="text-xs bg-slate-600 px-3 py-2 rounded hover:bg-slate-500 transition shadow-md">查看景點詳情</button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-100 text-slate-600 uppercase text-sm font-semibold">
+                            <tr>
+                                <th class="p-4 border-b w-1/6">時段</th>
+                                <th class="p-4 border-b w-1/3">行程重點</th>
+                                <th class="p-4 border-b">詳細安排 & 貼士</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-sm md:text-base">
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-sky-600">抵達交通</td>
+                                <td class="p-4">
+                                    <div class="font-bold">機場 (NCE) → 酒店</div>
+                                </td>
+                                <td class="p-4">
+                                    <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+                                        <li>乘搭 <strong>Tram 2號線</strong>（方向 Port Lympia）。</li>
+                                        <li>在機場站（Grand Arénas Sud）售票機購買 <strong>「Carnet 10 Voyages」</strong>（10次票，約 €10），可多人共用。</li>
+                                        <li>在 <strong>Garibaldi / Le Château 站</strong> 下車，步行約 5 分鐘至酒店。</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-sky-600">午餐</td>
+                                <td class="p-4">
+                                    <div class="font-bold">Chez René Socca</div>
+                                    <div class="text-xs text-gray-500">地道尼斯小食</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm mb-1"><i class="fa-solid fa-location-dot mr-1"></i>2 Rue Miralheti (舊城區)</p>
+                                    <p class="text-sm font-semibold text-orange-600">必試推薦：</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li><strong>Socca</strong> (鷹嘴豆煎餅，外脆內軟)</li>
+                                        <li><strong>釀蔬菜</strong> (Les Farcis)</li>
+                                    </ul>
+                                    <p class="text-xs text-red-500 mt-1">*需排隊，只收現金。</p>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-sky-600">下午漫步</td>
+                                <td class="p-4">
+                                    <div class="font-bold">舊城區探索</div>
+                                    <ul class="list-disc list-inside text-sm mt-1 text-gray-600">
+                                        <li>Place Garibaldi</li>
+                                        <li>Promenade du Paillon</li>
+                                        <li>Fenocchio Glacier</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4">
+                                    <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+                                        <li><strong>Place Garibaldi：</strong>附近有 Monoprix 超市可買水和零食。</li>
+                                        <li><strong>Promenade du Paillon：</strong>市中心綠化長廊，有大型遊樂場和噴泉。</li>
+                                        <li><strong>Fenocchio Glacier：</strong>位於 Place Rossetti，超過 70 種口味。
+                                            <span class="block text-orange-600 ml-4">推介：番茄羅勒、橄欖味 (獨特) 或 保險口味。</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-sky-600">晚餐</td>
+                                <td class="p-4">
+                                    <div class="font-bold">Peixes Bonaparte</div>
+                                    <div class="text-xs text-gray-500">創意海鮮 Tapas</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm mb-1"><i class="fa-solid fa-location-dot mr-1"></i>5 Rue Bonaparte (離酒店近)</p>
+                                    <p class="text-sm">特色：<strong>Ceviche (酸橘汁醃魚)</strong>、現代風格小盤料理。</p>
+                                    <p class="text-xs text-red-500 mt-1">*不設預約，建議早點去。週日休息。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Day 2 -->
+            <section class="bg-white rounded-xl shadow-lg overflow-hidden print-break">
+                <div class="bg-purple-700 text-white p-4 flex flex-col md:flex-row justify-between items-center gap-3">
+                    <h3 class="text-xl font-bold">Day 2：山海絕景 — 艾茲 & 摩納哥</h3>
+                    <div class="flex flex-wrap gap-2 justify-center md:justify-end">
+                        <a href="https://www.google.com/maps/dir/Parfumerie+Fragonard+-+L'Usine+Laboratoire+Èze,+Place+du+Général+de+Gaulle,+Èze/Jardin+Exotique+d'Èze,+Rue+du+Château,+Èze" target="_blank" class="text-xs bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 flex items-center font-bold transition shadow-md">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i>艾茲步行路線
+                        </a>
+                        <a href="https://www.google.com/maps/dir/Prince's+Palace+of+Monaco,+Monaco/Oceanographic+Museum+of+Monaco,+Avenue+Saint-Martin,+Monaco/Port+Hercule,+Monaco/Casino+de+Monte-Carlo,+Place+du+Casino,+Monaco" target="_blank" class="text-xs bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 flex items-center font-bold transition shadow-md">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i>摩納哥步行路線
+                        </a>
+                        <button onclick="switchTab('attractions')" class="text-xs bg-purple-600 border border-white/30 px-3 py-2 rounded hover:bg-purple-500 transition shadow-md">查看景點詳情</button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-100 text-slate-600 uppercase text-sm font-semibold">
+                            <tr>
+                                <th class="p-4 border-b w-1/6">時段</th>
+                                <th class="p-4 border-b w-1/3">行程重點</th>
+                                <th class="p-4 border-b">詳細安排 & 貼士</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-sm md:text-base">
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-purple-600 w-1/6">上午</td>
+                                <td class="p-4 w-1/3">
+                                    <div class="font-bold">Èze Village (艾茲山城)</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm font-bold mb-1">交通：</p>
+                                    <p class="text-sm mb-2">Nice Riquier 搭火車至 <strong>Èze-sur-Mer</strong> 站，出站後轉乘 <strong>Bus 83</strong> 上山。</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li><strong>Le Jardin Exotique (仙人掌花園)：</strong>門票約 €8，必去！可俯瞰 360 度無敵地中海全景。</li>
+                                        <li><strong>Fragonard 香水廠：</strong>山腳可免費參觀香水製作。</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-purple-600">午餐</td>
+                                <td class="p-4">
+                                    <div class="font-bold">Château Eza 或 輕食</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm"><strong>Château Eza：</strong>懸崖邊高級餐廳，風景極佳 (需預約)。</p>
+                                    <p class="text-sm"><strong>輕食：</strong>山城內有小店賣三文治，可在石板街上吃。</p>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-purple-600">下午</td>
+                                <td class="p-4">
+                                    <div class="font-bold">摩納哥 (Monaco)</div>
+                                    <div class="text-xs text-gray-500">不入賭場路線</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm mb-2"><i class="fa-solid fa-bus mr-1"></i>從 Èze 搭 Bus 112 或火車前往。</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li><strong>親王宮：</strong>衛兵換崗 (11:55)，否則看外觀及風景。</li>
+                                        <li><strong>海洋博物館：</strong>建在懸崖邊。</li>
+                                        <li><strong>F1 賽車道：</strong>沿港口 (Port Hercule) 散步，看髮夾彎。</li>
+                                        <li><strong>蒙地卡羅賭場：</strong>只在廣場拍照，欣賞名車，不需入場。</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-purple-600">晚餐</td>
+                                <td class="p-4">
+                                    <div class="font-bold">Acchiardo</div>
+                                    <div class="text-xs text-gray-500">傳統尼斯菜家庭料理</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm mb-1"><i class="fa-solid fa-location-dot mr-1"></i>38 Rue Droite (舊城區)</p>
+                                    <p class="text-sm font-semibold text-purple-700">必試菜式：</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li><strong>Daube</strong> (燉牛肉)</li>
+                                        <li><strong>Ravioli</strong> (意大利餃)</li>
+                                    </ul>
+                                    <p class="text-xs text-red-500 mt-1">*深受本地人歡迎，強烈建議提前預約。週六日通常休息 (如遇休息日可調整至 Day 3)。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Day 3 -->
+            <section class="bg-white rounded-xl shadow-lg overflow-hidden print-break">
+                <div class="bg-orange-600 text-white p-4 flex flex-col md:flex-row justify-between items-center gap-3">
+                    <h3 class="text-xl font-bold">Day 3：昂蒂布 (Antibes) 古城沙灘遊</h3>
+                    <div class="flex gap-2">
+                        <a href="https://www.google.com/maps/dir/Gare+d'Antibes/Plage+de+la+Gravette/Marché+provençal/Promenade+Amiral+de+Grasse/Le+Nomade" target="_blank" class="text-xs bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600 flex items-center font-bold transition shadow-md">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i>開啟 Day 3 步行路線
+                        </a>
+                        <button onclick="switchTab('attractions')" class="text-xs bg-orange-500 px-2 py-1 rounded hover:bg-orange-400">查看景點詳情</button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-100 text-slate-600 uppercase text-sm font-semibold">
+                            <tr>
+                                <th class="p-4 border-b w-1/6">時段</th>
+                                <th class="p-4 border-b w-1/3">行程重點</th>
+                                <th class="p-4 border-b">詳細安排 & 貼士</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-sm md:text-base">
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-orange-600 w-1/6">上午</td>
+                                <td class="p-4 w-1/3">
+                                    <div class="font-bold">Plage de la Gravette</div>
+                                    <div class="text-xs text-gray-500">古城牆下的沙灘</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm font-bold mb-1">交通：</p>
+                                    <p class="text-sm mb-2"><i class="fa-solid fa-train mr-1"></i>從 Nice-Ville 或 Nice Riquier 搭火車至 <strong>Antibes</strong> 站 (約 20 分鐘)。出站後步行約 10 分鐘即達沙灘。</p>
+                                    <p class="text-sm">特色：沙質細軟，被城牆包圍，風平浪靜，非常適合家庭玩沙游泳。</p>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-orange-600">午餐</td>
+                                <td class="p-4">
+                                    <div class="font-bold">昂蒂布舊城區 (Vieil Antibes)</div>
+                                    <div class="text-xs text-gray-500">沙灘附近</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm">舊城區有許多不錯的餐廳。推介：</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li><strong>Le P'tit Cageot：</strong>評價極高的法式小館，CP值高 (建議預約)。</li>
+                                        <li><strong>Gelateria Del Porto：</strong>餐後必吃，號稱蔚藍海岸最好吃的雪糕之一。</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-orange-600">下午</td>
+                                <td class="p-4">
+                                    <div class="font-bold">漫步昂蒂布</div>
+                                    <ul class="list-disc list-inside text-xs text-gray-500 mt-1">
+                                        <li>普羅旺斯市集</li>
+                                        <li>海濱長廊散步</li>
+                                        <li>沃邦港 (Port Vauban)</li>
+                                    </ul>
+                                </td>
+                                <td class="p-4">
+                                    <ul class="list-decimal list-inside text-sm text-gray-600 space-y-2">
+                                        <li><strong>Marché Provençal：</strong>充滿南法風情的有蓋市集 (下午部分攤檔可能收市，但建築很美)。</li>
+                                        <li><strong>Promenade Amiral de Grasse：</strong>沿著古城牆的海濱長廊漫步，欣賞蔚藍地中海景致。</li>
+                                        <li><strong>Le Nomade：</strong>位於沃邦港防波堤上的著名巨型字母人雕塑，打卡必到。</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-orange-600">晚餐</td>
+                                <td class="p-4">
+                                    <div class="font-bold">Café de Turin</div>
+                                    <div class="text-xs text-gray-500">回尼斯晚餐</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm font-bold mb-1">交通：</p>
+                                    <p class="text-sm mb-2">搭火車返回尼斯 (Nice Riquier 站)。</p>
+                                    <p class="text-sm">前往 <strong>Place Garibaldi</strong> 享用著名的海鮮拼盤和生蠔。這是尼斯之旅不可錯過的體驗。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Day 4 -->
+            <section class="bg-white rounded-xl shadow-lg overflow-hidden print-break">
+                <div class="bg-gray-700 text-white p-4 flex justify-between items-center">
+                    <h3 class="text-xl font-bold">Day 4：花市早晨 & 離開</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-100 text-slate-600 uppercase text-sm font-semibold">
+                            <tr>
+                                <th class="p-4 border-b w-1/6">時段</th>
+                                <th class="p-4 border-b w-1/3">行程重點</th>
+                                <th class="p-4 border-b">詳細安排 & 貼士</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 text-sm md:text-base">
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-gray-600 w-1/6">上午</td>
+                                <td class="p-4 w-1/3">
+                                    <div class="font-bold">Cours Saleya 花市 & 退房</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm mb-2">利用最後的早晨感受尼斯的活力：</p>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li><strong>Cours Saleya 花市：</strong>位於舊城區，早上充滿鮮花和蔬果香氣 (週一為古董市集)。必試街頭小食 Socca。</li>
+                                        <li>退房後可將行李寄存在酒店。</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-gray-600">午餐</td>
+                                <td class="p-4">
+                                    <div class="font-bold">Pan Bagnat</div>
+                                    <div class="text-xs text-gray-500">尼斯吞拿魚三文治</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm">最地道的午餐，餡料豐富 (吞拿魚、烚蛋、橄欖)。</p>
+                                    <p class="text-sm">可在舊城區或麵包店購買，方便攜帶去機場。</p>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-sky-50">
+                                <td class="p-4 font-bold text-gray-600">回程</td>
+                                <td class="p-4">
+                                    <div class="font-bold">前往機場 (NCE)</div>
+                                </td>
+                                <td class="p-4">
+                                    <p class="text-sm">回酒店取行李，乘搭 <strong>Tram 2</strong> 直達尼斯機場離開。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <!-- ==================== PAGE 2: 景點介紹 (Attractions) ==================== -->
+        <div id="attractions-view" class="tab-content space-y-8">
+            
+            <div class="bg-sky-100 border-l-4 border-sky-500 p-4 mb-6 rounded-r">
+                <p class="text-sky-800 font-bold">💡 使用說明</p>
+                <p class="text-sm text-sky-700">以下為行程中各景點的詳細資訊。點擊「查看更多圖片」按鈕可在新分頁搜尋該景點的照片。</p>
+            </div>
+
+            <!-- SECTION 1: 法國：尼斯與周邊 -->
+            <div class="mb-10">
+                <h2 class="text-3xl font-bold text-sky-700 mb-6 flex items-center border-b-2 border-sky-200 pb-3">
+                    <span class="bg-sky-100 text-sky-600 w-10 h-10 rounded-full flex items-center justify-center mr-3 text-lg">
+                        <i class="fa-solid fa-flag"></i>
+                    </span>
+                    法國：尼斯 (Nice) 與 艾茲 (Èze)
+                </h2>
+
+                <!-- Place Garibaldi -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">1. 加里波第廣場 (Place Garibaldi)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Nice, France</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-ticket mr-2"></i>免費</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Place+Garibaldi+Nice" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            尼斯最古老的大型廣場之一，建於18世紀末，以意大利統一運動英雄朱塞佩·加里波第（出生於尼斯）命名。廣場四周環繞著黃色外牆和綠色百葉窗的巴洛克式建築，展現了濃厚的意大利風格。廣場中央矗立著加里波第的雕像，周圍有許多露天咖啡座和餐廳，是當地人休閒聚會的熱門地點。
+                        </p>
+                        
+                        <!-- Map -->
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Place+Garibaldi+Nice&t=&z=17&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cours Saleya -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">2. 薩雷亞大道花市 (Cours Saleya)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Nice, France</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-regular fa-clock mr-2"></i>週二至日 06:00 - 17:30</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Cours+Saleya+Nice" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            位於舊城區與海灘之間的寬闊步行街，是尼斯的心臟地帶。色彩斑斕的遮陽棚下，攤販們擺滿了普羅旺斯的鮮花、新鮮蔬果、香料、肥皂和蜜餞。這裡充滿了南法的色彩與香氣，是體驗當地生活的最佳場所。特別注意：每逢週一，這裡會變身為著名的古董市集（Marché à la Brocante）。
+                        </p>
+                        
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Cours+Saleya+Nice&t=&z=17&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Castle Hill -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">3. 城堡山公園 (Colline du Château)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Nice, France</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-ticket mr-2"></i>免費 (含升降機)</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Colline+du+Château+Nice" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            俯瞰尼斯全景的絕佳地點：一面可以看到著名的「天使灣」（Baie des Anges）那標誌性的蔚藍海岸弧線；另一面則可眺望尼斯港口。公園內還有一個人造瀑布，是夏日消暑的好去處。若不想爬樓梯，可搭乘位於 Rue des Ponchettes 街尾的免費裝飾藝術風格電梯上山。
+                        </p>
+                        
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Castle+Hill+Nice&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Villa Masséna (New) -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">4. 瑪西納別墅 (Musée Masséna) & Hotel Negresco</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Promenade des Anglais</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-ticket mr-2"></i>約 €10 (18歲以下免費)</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Villa+Massena+Nice+Hotel+Negresco" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            這座建於 19 世紀的華麗別墅，完美展現了尼斯「美好年代」（Belle Époque）的貴族生活。館內收藏了拿破崙的死亡面具及約瑟芬皇后的頭飾，還有許多描繪老尼斯風貌的藝術品。別墅後方有一個幽靜的花園。參觀完後，別忘了欣賞隔壁世界聞名的 **Hotel Negresco**，其粉紅色圓頂是尼斯的地標，大堂內收藏了珍貴的藝術品（若非住客，可在酒吧消費參觀）。
+                        </p>
+                        
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Musée+Masséna+Nice&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jardin Exotique d’Èze -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">5. 艾茲仙人掌花園 (Jardin Exotique d’Èze)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Èze, France</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-ticket mr-2"></i>成人約 €8</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Jardin+Exotique+Eze" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            位於艾茲鷲巢村的最頂端，海拔約 429 米。花園內種植了數百種仙人掌和多肉植物，在古老的城堡廢墟間生長。這裡最吸引人的不僅是植物，更是其無與倫比的視野——您可以360度俯瞰整個法國蔚藍海岸，從意大利邊境一直延伸到聖特羅佩，是南法最經典的打卡聖地。
+                        </p>
+                        
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Jardin+Exotique+Eze&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fragonard Perfume Factory (New) -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">6. Fragonard 香水廠 (L'Usine Historique)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Èze, France</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-ticket mr-2"></i>免費參觀 (含導覽)</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Fragonard+Perfume+Factory+Eze" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            位於艾茲山腳下，這座充滿歷史感的香水工廠是法國著名品牌 Fragonard 的重要據點。遊客可以參加免費的導覽團，了解香水從原料提取到蒸餾、調配的完整製作過程，甚至可以參觀實驗室。參觀結束後，您還可以在附設的商店以工廠價購買香水、肥皂和化妝品，是絕佳的伴手禮購買點。
+                        </p>
+                        
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Parfumerie+Fragonard+Eze&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: 摩納哥 -->
+            <div class="mb-10">
+                <h2 class="text-3xl font-bold text-purple-700 mb-6 flex items-center border-b-2 border-purple-200 pb-3">
+                    <span class="bg-purple-100 text-purple-600 w-10 h-10 rounded-full flex items-center justify-center mr-3 text-lg">
+                        <i class="fa-solid fa-crown"></i>
+                    </span>
+                    摩納哥 (Monaco)
+                </h2>
+
+                <!-- Monaco Palace -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">1. 摩納哥親王宮 (Prince's Palace of Monaco)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Monaco</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-regular fa-clock mr-2"></i>衛兵交接：每日 11:55</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Prince's+Palace+of+Monaco" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            摩納哥親王宮是格里馬爾迪家族（Grimaldi family）的官邸，位於稱為「岩石」（Le Rocher）的懸崖頂端，俯瞰整個摩納哥港口。遊客必看的重頭戲是每天中午 11:55 在王宮廣場舉行的衛兵交接儀式（Carabiniers du Prince），穿著傳統白色制服的衛兵在軍樂聲中進行換崗，莊嚴而隆重。
+                        </p>
+                        
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Prince's+Palace+Monaco&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Oceanographic Museum (New) -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">2. 摩納哥海洋博物館 (Musée Océanographique)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Monaco</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-ticket mr-2"></i>成人約 €19</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Oceanographic+Museum+Monaco" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            這座宏偉的博物館建於懸崖峭壁之上，由阿爾貝一世親王於1910年創立，是摩納哥最著名的地標之一。博物館本身就是一座建築傑作，館內擁有巨大的水族館，飼養著超過6000種海洋生物，包括色彩斑斕的珊瑚礁和鯊魚。屋頂露台更可360度俯瞰地中海和摩納哥全景，是拍照的絕佳地點。
+                        </p>
+                        
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Musée+Océanographique+de+Monaco&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F1 Circuit & Port Hercule (New) -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">3. F1 賽車道 & 大力神港 (Port Hercule)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-flag-checkered mr-2"></i>Monaco</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-ticket mr-2"></i>免費 (公共街道)</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Port+Hercule+Monaco" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            摩納哥是一級方程式賽車（F1）最傳奇的賽道之一，也是唯一的城市街道賽道。您可以沿著港口漫步，親身走過著名的髮夾彎（Fairmont Hairpin）和隧道。大力神港（Port Hercule）停泊著無數價值連城的超級遊艇，展現了摩納哥極致的奢華。這裡是感受賽車文化與富豪生活的最佳場所。
+                        </p>
+                        
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Port+Hercule+Monaco&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Casino Square (New) -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">4. 蒙地卡羅賭場廣場 (Place du Casino)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Monaco</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-eye mr-2"></i>外觀參觀免費</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Place+du+Casino+Monaco" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            即使不打算進入賭場，蒙地卡羅賭場前的廣場（Place du Casino）也是必遊之地。這裡匯聚了巴黎大飯店（Hôtel de Paris）和巴黎咖啡館（Café de Paris）等極具代表性的美好年代（Belle Époque）建築。廣場上總是停滿了最新的法拉利、藍寶堅尼和勞斯萊斯，是名車愛好者的天堂。這裡是摩納哥紙醉金迷的最佳寫照，非常適合拍照留念。
+                        </p>
+                        
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Place+du+Casino+Monaco&t=&z=17&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: 昂蒂布 (Antibes) (NEW) -->
+            <div class="mb-10">
+                <h2 class="text-3xl font-bold text-orange-600 mb-6 flex items-center border-b-2 border-orange-200 pb-3">
+                    <span class="bg-orange-100 text-orange-600 w-10 h-10 rounded-full flex items-center justify-center mr-3 text-lg">
+                        <i class="fa-solid fa-sailboat"></i>
+                    </span>
+                    法國：昂蒂布 (Antibes)
+                </h2>
+
+                <!-- Plage de la Gravette -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">1. 葛拉維特沙灘 (Plage de la Gravette)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Old Antibes</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-ticket mr-2"></i>免費</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Plage+de+la+Gravette+Antibes" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            這是一個隱藏在古城牆下的馬蹄形小沙灘，位置極佳，就在昂蒂布舊城區港口旁。由於被石頭城牆包圍，這裡幾乎沒有浪，非常安全，沙質細軟潔白。它是當地家庭的最愛，非常適合小朋友堆沙和游泳。玩完沙只需步行幾分鐘就能進入舊城區享用午餐，非常方便。
+                        </p>
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Plage+de+la+Gravette+Antibes&t=&z=17&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vieil Antibes -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">2. 昂蒂布舊城區 & 普羅旺斯市集</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Old Antibes</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-clock mr-2"></i>市集上午營業</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Vieil+Antibes+Marché+Provençal" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            昂蒂布的舊城區保留了濃厚的普羅旺斯風情，狹窄的街道開滿了鮮花。必遊之地是 **Marché Provençal (普羅旺斯市集)**，這個有蓋市場充滿了當地的香料、芝士和手工藝品。你可以沿著海邊的 **Promenade Amiral de Grasse** 城牆大道散步，一邊是古堡，一邊是蔚藍地中海，風景絕佳。
+                        </p>
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Marché+Provençal+Antibes&t=&z=17&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Le Nomade -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">3. 沃邦港 & 字母人雕塑 (Le Nomade)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4 items-center">
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-location-dot mr-2"></i>Port Vauban</span>
+                            <span class="bg-gray-100 px-3 py-1 rounded-full"><i class="fa-solid fa-ticket mr-2"></i>免費</span>
+                            <a href="https://www.google.com/search?tbm=isch&q=Le+Nomade+Antibes+Jaume+Plensa" target="_blank" class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full hover:bg-pink-200 transition cursor-pointer no-underline text-xs font-bold">
+                                <i class="fa-solid fa-images mr-1"></i>查看更多圖片
+                            </a>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            沿著舊城區走向 **Port Vauban (沃邦港)**，這裡是歐洲最大的遊艇港口之一，停泊著無數豪華遊艇。在港口防波堤的盡頭，坐落著西班牙藝術家 Jaume Plensa 創作的巨型白色網狀雕塑 **Le Nomade (流浪者/字母人)**。這個由無數個字母組成的人形雕塑面向大海，象徵著無限的可能性，是昂蒂布最標誌性的現代地標。
+                        </p>
+                        <div class="map-container shadow-inner">
+                            <iframe src="https://maps.google.com/maps?q=Le+Nomade+Antibes&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-8 mb-4">
+                <button onclick="switchTab('itinerary')" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-8 rounded-full transition duration-300">
+                    <i class="fa-solid fa-arrow-left mr-2"></i>返回行程表
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 text-center p-6 mt-8 no-print">
+        <p class="mb-4 text-lg font-bold text-sky-100">祝你有個愉快的南法之旅！ Bon Voyage!</p>
+        
+        <div class="bg-slate-700 p-4 rounded-lg max-w-md mx-auto mb-4">
+            <p class="text-sm mb-3 text-slate-300"><i class="fa-solid fa-share-nodes mr-2"></i>想分享給朋友？</p>
+            <button onclick="window.print()" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 w-full mb-2">
+                <i class="fa-solid fa-file-pdf mr-2"></i>儲存為 PDF / 列印
+            </button>
+            <p class="text-xs text-slate-500">
+                💡 手機貼士：點擊按鈕後，在「印表機」選項選擇「儲存為檔案」或「Save to Files」，即可經 WhatsApp 分享 PDF。
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Reset button styles
+            const btnItinerary = document.getElementById('btn-itinerary');
+            const btnAttractions = document.getElementById('btn-attractions');
+            
+            // Default classes
+            const activeClasses = ['bg-white', 'text-sky-600', 'ring-2', 'ring-white'];
+            const inactiveClasses = ['bg-sky-700', 'text-sky-100', 'hover:bg-sky-500', 'hover:text-white'];
+            
+            if (tabId === 'itinerary') {
+                document.getElementById('itinerary-view').classList.add('active');
+                
+                // Set Itinerary Button Active
+                btnItinerary.className = `flex-1 py-2 px-4 font-bold rounded-lg shadow transition-all duration-200 focus:outline-none ${activeClasses.join(' ')}`;
+                // Set Attractions Button Inactive
+                btnAttractions.className = `flex-1 py-2 px-4 font-bold rounded-lg shadow transition-all duration-200 focus:outline-none ${inactiveClasses.join(' ')}`;
+                
+            } else {
+                document.getElementById('attractions-view').classList.add('active');
+                
+                // Set Attractions Button Active
+                btnAttractions.className = `flex-1 py-2 px-4 font-bold rounded-lg shadow transition-all duration-200 focus:outline-none ${activeClasses.join(' ')}`;
+                // Set Itinerary Button Inactive
+                btnItinerary.className = `flex-1 py-2 px-4 font-bold rounded-lg shadow transition-all duration-200 focus:outline-none ${inactiveClasses.join(' ')}`;
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
