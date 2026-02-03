@@ -1,0 +1,470 @@
+import React, { useState } from 'react';
+import { 
+  MapPin, 
+  Train, 
+  Utensils, 
+  Info, 
+  AlertTriangle, 
+  Camera, 
+  ShoppingBag, 
+  Home, 
+  Calendar,
+  Navigation,
+  Ticket
+} from 'lucide-react';
+
+// 行程數據
+const itineraryData = [
+  {
+    day: 1,
+    date: "5月26日 (週二)",
+    title: "抵達與巴黎地標",
+    highlight: "Gare du Nord, 艾菲爾鐵塔, 凱旋門",
+    events: [
+      {
+        time: "12:59",
+        title: "抵達巴黎北站 (Gare du Nord)",
+        desc: "乘坐 Eurostar 抵達。建議全家先去洗手間，整理裝備。",
+        icon: <Train className="w-5 h-5 text-blue-600" />,
+        transport: "建議直接叫兩輛 Uber 或 G7 Taxi 前往民宿 (約 35-45 分鐘)。人多行李多，轉地鐵會太辛苦。"
+      },
+      {
+        time: "14:30",
+        title: "民宿 Check-in",
+        desc: "地址: 24 Jardins Boieldieu, 92800 Puteaux。安頓行李，稍作休息。",
+        icon: <Home className="w-5 h-5 text-green-600" />,
+        location: "24 Jardins Boieldieu, 92800 Puteaux"
+      },
+      {
+        time: "16:00",
+        title: "艾菲爾鐵塔 (Eiffel Tower)",
+        desc: "先到 Trocadéro 廣場看全景 (最佳拍照點)，然後沿坡道走過耶拿橋 (Pont d'Iéna) 到鐵塔腳下。",
+        icon: <MapPin className="w-5 h-5 text-red-500" />,
+        transport: "從 La Défense 搭 Metro 1 到 Charles de Gaulle – Étoile，轉乘 Metro 6 到 Trocadéro 站。"
+      },
+      {
+        time: "18:30",
+        title: "凱旋門 (Arc de Triomphe)",
+        desc: "參觀宏偉的凱旋門，漫步香榭麗舍大道。適合拍照打卡。",
+        icon: <Camera className="w-5 h-5 text-purple-600" />,
+        transport: "參觀完鐵塔後，步行至附近的 Bir-Hakeim 站 (不用走回頭路)，搭 Metro 6 直達 Charles de Gaulle – Étoile 站。"
+      },
+      {
+        time: "20:00",
+        title: "晚餐",
+        desc: "可在香榭麗舍大道附近用餐，或搭 Metro 1 直接回 La Défense 的 Westfield 商場 (選擇多，環境舒適)。",
+        icon: <Utensils className="w-5 h-5 text-orange-500" />
+      }
+    ]
+  },
+  {
+    day: 2,
+    dayName: "Day 2",
+    date: "5月27日 (週三)",
+    title: "藝術、歷史與購物",
+    highlight: "羅浮宮, 聖母院, 老佛爺百貨",
+    events: [
+      {
+        time: "09:30",
+        title: "羅浮宮 (Louvre Museum)",
+        desc: "必看三寶：蒙娜麗莎、勝利女神、維納斯。帶著小孩建議參觀 2-2.5 小時即可。",
+        icon: <Camera className="w-5 h-5 text-purple-600" />,
+        transport: "Metro 1 (La Défense) -> Palais Royal - Musée du Louvre 站。",
+        tips: "務必提前網上預約早上時段！"
+      },
+      {
+        time: "12:30",
+        title: "午餐時間",
+        desc: "Palais Royal 花園野餐或周邊餐廳。",
+        icon: <Utensils className="w-5 h-5 text-orange-500" />
+      },
+      {
+        time: "14:00",
+        title: "巴黎聖母院 (Notre-Dame)",
+        desc: "參觀修復後的教堂外觀與內部，順便逛逛塞納河畔書攤。",
+        icon: <MapPin className="w-5 h-5 text-red-500" />,
+        transport: "沿塞納河步行 15 分鐘，或 Metro 1 -> Hôtel de Ville 站。"
+      },
+      {
+        time: "16:00",
+        title: "老佛爺百貨 (Galeries Lafayette)",
+        desc: "購物時間！別忘了去頂樓露台 (Terrace) 免費看巴黎全景。",
+        icon: <ShoppingBag className="w-5 h-5 text-pink-600" />,
+        transport: "從 Châtelet 搭 RER A -> Auber 站 (出口即是)。"
+      },
+      {
+        time: "19:00",
+        title: "晚餐: Bouillon Chartier",
+        desc: "Grands Boulevards 分店。百年工人食堂，氣氛熱鬧，必試油封鴨、蝸牛。",
+        icon: <Utensils className="w-5 h-5 text-orange-500" />,
+        transport: "從老佛爺步行約 10-15 分鐘。",
+        tips: "不可訂位，建議 18:30 前到達排隊。"
+      }
+    ]
+  },
+  {
+    day: 3,
+    dayName: "Day 3",
+    date: "5月28日 (週四)",
+    title: "皇室氣派一日遊",
+    highlight: "凡爾賽宮 (Palace of Versailles)",
+    events: [
+      {
+        time: "09:00",
+        title: "前往凡爾賽宮",
+        desc: "利用你們住 Puteaux 的優勢，交通非常方便！",
+        icon: <Train className="w-5 h-5 text-blue-600" />,
+        transport: "La Défense 站搭火車 Transilien L 或 U 線 -> Versailles Rive Droite 站 (約20分鐘)，出站步行15分鐘。"
+      },
+      {
+        time: "10:00",
+        title: "凡爾賽宮參觀",
+        desc: "參觀鏡廳、國王寢宮。之後重點放在戶外花園，建議租高爾夫球車或搭小火車，小孩會很喜歡。",
+        icon: <Camera className="w-5 h-5 text-purple-600" />,
+        tips: "建議租借兒童語音導覽。"
+      },
+      {
+        time: "15:00",
+        title: "返回市區 / 休息",
+        desc: "回民宿稍作休息，或在 La Défense 新凱旋門廣場活動。",
+        icon: <Home className="w-5 h-5 text-green-600" />
+      },
+      {
+        time: "19:00",
+        title: "晚餐: L'Atelier Artisan Crêpier",
+        desc: "位於 Westfield Les 4 Temps 商場內 (2樓或3樓)。提供正宗法式鹹薄餅 (Galette) 和甜薄餅，環境舒適，非常適合親子。",
+        icon: <Utensils className="w-5 h-5 text-orange-500" />,
+        location: "Westfield Les 4 Temps, 15 Parvis De La Défense",
+        tips: "人氣餐廳，若有計劃可嘗試提前經過訂位，或者早點過去。"
+      }
+    ]
+  },
+  {
+    day: 4,
+    dayName: "Day 4",
+    date: "5月29日 (週五)",
+    title: "蒙馬特與回程",
+    highlight: "聖心堂, 蒙馬特, 回倫敦",
+    events: [
+      {
+        time: "10:00",
+        title: "Check-out & 行李寄存",
+        desc: "帶著行李離開民宿。",
+        icon: <Home className="w-5 h-5 text-green-600" />,
+        transport: "La Défense 搭 RER E -> Magenta (即 Gare du Nord)。在車站內 'Consigne' 寄存行李。"
+      },
+      {
+        time: "12:00",
+        title: "聖心堂 & 蒙馬特",
+        desc: "搭纜車上山，參觀畫家村 (Place du Tertre)。",
+        icon: <MapPin className="w-5 h-5 text-red-500" />,
+        transport: "從北站步行或搭 Metro 4 -> Anvers 站。"
+      },
+      {
+        time: "17:30",
+        title: "晚餐: Bouillon Pigalle",
+        desc: "必食餐廳！就在蒙馬特山腳。一定要開門前 (17:30) 到達排隊。",
+        icon: <Utensils className="w-5 h-5 text-orange-500" />,
+        location: "22 Bd de Clichy, 75018 Paris"
+      },
+      {
+        time: "19:00",
+        title: "回到 Gare du Nord",
+        desc: "取回行李，辦理登車手續 (安檢+海關)。",
+        icon: <AlertTriangle className="w-5 h-5 text-yellow-600" />,
+        tips: "Eurostar 20:02 開車，務必預留至少 1 小時通關。"
+      },
+      {
+        time: "20:02",
+        title: "再見巴黎",
+        desc: "乘坐 Eurostar 返回倫敦。",
+        icon: <Train className="w-5 h-5 text-blue-600" />
+      }
+    ]
+  }
+];
+
+// 新增門票數據
+const ticketData = [
+  {
+    name: "凱旋門 (Arc de Triomphe)",
+    adultPrice: "€16.00",
+    childPrice: "免費",
+    note: "18歲以下免費，但建議預約免費票以節省排隊時間。"
+  },
+  {
+    name: "艾菲爾鐵塔 (頂層電梯)",
+    adultPrice: "約 €35.30",
+    childPrice: "約 €8.90",
+    note: "4-11歲享兒童價。極難買票，需提前3個月官網搶購。"
+  },
+  {
+    name: "羅浮宮 (Louvre)",
+    adultPrice: "€22.00",
+    childPrice: "免費",
+    note: "18歲以下免費。成人務必提前網上預約時段。"
+  },
+  {
+    name: "聖心堂 (圓頂)",
+    adultPrice: "約 €8.00",
+    childPrice: "約 €5.00",
+    note: "教堂免費參觀。登頂需現場購票，無電梯。"
+  },
+  {
+    name: "凡爾賽宮 (Passport)",
+    adultPrice: "約 €32.00",
+    childPrice: "宮殿免費 / 花園 €10",
+    note: "旺季(5月)花園有音樂噴泉表演，6歲以上需購票進入花園。"
+  },
+  {
+    name: "巴黎聖母院",
+    adultPrice: "免費",
+    childPrice: "免費",
+    note: "教堂主殿免費。若登塔或參觀地下室可能另收費。"
+  }
+];
+
+export default function ParisItineraryApp() {
+  const [activeTab, setActiveTab] = useState('itinerary'); // 'itinerary' or 'budget'
+  const [activeDay, setActiveDay] = useState(1);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyAddress = () => {
+    navigator.clipboard.writeText("24 Jardins Boieldieu, 92800 Puteaux, France");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const currentItinerary = itineraryData.find(d => d.day === activeDay);
+
+  return (
+    <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
+      {/* Header */}
+      <header className="bg-blue-900 text-white p-6 shadow-lg relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center"></div>
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h1 className="text-3xl font-bold mb-2">巴黎親子四日三夜之旅</h1>
+          <div className="flex flex-col sm:flex-row gap-4 text-blue-100 text-sm sm:text-base mb-4">
+            <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> 2026年5月26日 - 29日</span>
+            <span className="flex items-center gap-2"><Utensils className="w-4 h-4" /> 4大3小 (8-10歲)</span>
+          </div>
+          
+          {/* New Tab Navigation */}
+          <div className="flex gap-2 mt-4">
+            <button 
+              onClick={() => setActiveTab('itinerary')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeTab === 'itinerary' ? 'bg-white text-blue-900' : 'bg-blue-800/50 text-blue-100 hover:bg-blue-800'}`}
+            >
+              行程表
+            </button>
+            <button 
+              onClick={() => setActiveTab('budget')}
+              className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${activeTab === 'budget' ? 'bg-white text-blue-900' : 'bg-blue-800/50 text-blue-100 hover:bg-blue-800'}`}
+            >
+              <Ticket className="w-4 h-4" /> 門票預算
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-4xl mx-auto p-4 space-y-6">
+        
+        {activeTab === 'itinerary' ? (
+          <>
+            {/* Accommodation Card */}
+            <div className="bg-white rounded-xl shadow-md p-5 border-l-4 border-green-500">
+              <div className="flex justify-between items-start">
+                <div>
+                  <h2 className="text-lg font-bold flex items-center gap-2 text-slate-900">
+                    <Home className="w-5 h-5 text-green-600" /> 住宿詳情
+                  </h2>
+                  <p className="text-slate-600 mt-1">24 Jardins Boieldieu, 92800 Puteaux</p>
+                  <div className="text-sm text-slate-500 mt-1">Check-in: 5月26日 14:30</div>
+                </div>
+                <button 
+                  onClick={handleCopyAddress}
+                  className="text-xs bg-slate-100 hover:bg-slate-200 text-slate-600 px-3 py-1 rounded-full transition-colors"
+                >
+                  {copied ? "已複製!" : "複製地址"}
+                </button>
+              </div>
+            </div>
+
+            {/* Day Tabs */}
+            <div className="flex overflow-x-auto gap-2 pb-2 scrollbar-hide">
+              {itineraryData.map((day) => (
+                <button
+                  key={day.day}
+                  onClick={() => setActiveDay(day.day)}
+                  className={`flex-shrink-0 px-5 py-3 rounded-lg font-medium transition-all duration-200 flex flex-col items-center min-w-[100px] ${
+                    activeDay === day.day
+                      ? "bg-blue-600 text-white shadow-lg scale-105"
+                      : "bg-white text-slate-500 hover:bg-slate-100"
+                  }`}
+                >
+                  <span className="text-xs opacity-80">{day.date.split(' ')[0]}</span>
+                  <span className="text-lg font-bold">Day {day.day}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Itinerary Content */}
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden animate-fadeIn">
+              {/* Day Header */}
+              <div className="bg-blue-50 p-6 border-b border-blue-100">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h2 className="text-2xl font-bold text-blue-900">{currentItinerary.title}</h2>
+                    <p className="text-blue-600 mt-1 flex items-center gap-2">
+                      <Camera className="w-4 h-4" /> 重點: {currentItinerary.highlight}
+                    </p>
+                  </div>
+                  <div className="text-right hidden sm:block">
+                    <div className="text-3xl font-bold text-blue-200">0{currentItinerary.day}</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Timeline Events */}
+              <div className="p-6 space-y-8">
+                {currentItinerary.events.map((event, index) => (
+                  <div key={index} className="relative pl-8 sm:pl-10 border-l-2 border-slate-200 last:border-0 pb-2">
+                    {/* Timeline Dot */}
+                    <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-blue-400"></div>
+                    
+                    <div className="flex flex-col sm:flex-row sm:items-start gap-3">
+                      {/* Time */}
+                      <div className="min-w-[60px] font-bold text-slate-400 text-sm mt-0.5 font-mono">
+                        {event.time}
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1 space-y-2">
+                        <h3 className="font-bold text-lg text-slate-800 flex items-center gap-2">
+                          {event.icon}
+                          {event.title}
+                        </h3>
+                        
+                        <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                          {event.desc}
+                        </p>
+
+                        {/* Transport Box */}
+                        {event.transport && (
+                          <div className="bg-slate-50 border border-slate-100 rounded-lg p-3 text-sm text-slate-600 flex gap-2 items-start mt-2">
+                            <Navigation className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                            <span><span className="font-semibold text-blue-700">交通：</span>{event.transport}</span>
+                          </div>
+                        )}
+
+                        {/* Tips Box */}
+                        {event.tips && (
+                          <div className="bg-yellow-50 border border-yellow-100 rounded-lg p-3 text-sm text-yellow-800 flex gap-2 items-start mt-2">
+                            <AlertTriangle className="w-4 h-4 text-yellow-600 mt-0.5 flex-shrink-0" />
+                            <span><span className="font-semibold">注意：</span>{event.tips}</span>
+                          </div>
+                        )}
+
+                        {/* Location Copy (Optional) */}
+                        {event.location && (
+                           <button 
+                           onClick={() => {
+                             navigator.clipboard.writeText(event.location);
+                             alert("地址已複製: " + event.location);
+                           }}
+                           className="text-xs text-blue-500 hover:underline flex items-center gap-1 mt-1"
+                         >
+                           <MapPin className="w-3 h-3" /> {event.location} (點擊複製)
+                         </button>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* General Tips Section - Only show in itinerary tab */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-red-50 p-5 rounded-xl border border-red-100">
+                <h3 className="font-bold text-red-800 mb-2 flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4" /> 安全提示
+                </h3>
+                <ul className="text-sm text-red-700 space-y-1 list-disc list-inside">
+                  <li>Metro 1 號線和蒙馬特是扒手熱點。</li>
+                  <li>提醒女孩們不要幫陌生人填問卷。</li>
+                  <li>重要財物請放在防盜袋或外套內袋。</li>
+                </ul>
+              </div>
+
+              <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                 <h3 className="font-bold text-blue-800 mb-2 flex items-center gap-2">
+                  <Info className="w-4 h-4" /> 實用資訊
+                </h3>
+                <ul className="text-sm text-blue-700 space-y-1 list-disc list-inside">
+                  <li>Puteaux 位於 Zone 3，凡爾賽在 Zone 4。</li>
+                  <li>建議下載 <strong>Île-de-France Mobilités</strong> App 買票。</li>
+                  <li>8-10 歲兒童可買半價 Carnet 車票。</li>
+                </ul>
+              </div>
+            </div>
+          </>
+        ) : (
+          /* Budget Tab Content */
+          <div className="space-y-6 animate-fadeIn">
+             <div className="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 border border-blue-200 flex gap-3">
+               <Info className="w-5 h-5 flex-shrink-0 text-blue-600" />
+               <div>
+                 <p className="font-bold mb-1">關於小童免費優惠</p>
+                 <p>巴黎大部分國立博物館（如羅浮宮、凱旋門、凡爾賽宮殿）對 18 歲以下兒童免費。但即使免費，通常也建議或必須預約「0 元門票」以確保入場時段。</p>
+               </div>
+             </div>
+
+             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+               <div className="overflow-x-auto">
+                <table className="w-full text-left text-sm sm:text-base">
+                  <thead className="bg-slate-100 text-slate-700 uppercase font-bold">
+                    <tr>
+                      <th className="px-6 py-4">景點</th>
+                      <th className="px-6 py-4">成人票價 (預估)</th>
+                      <th className="px-6 py-4">小童 (8-10歲)</th>
+                      <th className="px-6 py-4 hidden sm:table-cell">備註</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {ticketData.map((item, idx) => (
+                      <tr key={idx} className="hover:bg-slate-50 transition-colors">
+                        <td className="px-6 py-4 font-bold text-slate-800">{item.name}</td>
+                        <td className="px-6 py-4 text-slate-600 font-mono">{item.adultPrice}</td>
+                        <td className="px-6 py-4 font-mono">
+                           <span className={`px-2 py-1 rounded-full text-xs font-bold ${item.childPrice === '免費' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700'}`}>
+                             {item.childPrice}
+                           </span>
+                        </td>
+                        <td className="px-6 py-4 text-slate-500 text-sm hidden sm:table-cell">{item.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+               </div>
+               {/* Mobile only notes */}
+               <div className="sm:hidden p-4 bg-slate-50 text-xs text-slate-500 space-y-2 border-t border-slate-100">
+                 {ticketData.map((item, idx) => (
+                   <div key={idx}>
+                     <span className="font-bold">{item.name}:</span> {item.note}
+                   </div>
+                 ))}
+               </div>
+             </div>
+          </div>
+        )}
+
+        <footer className="text-center text-slate-400 text-xs py-6">
+          祝兩個家庭巴黎之旅愉快！Bon Voyage! 🇫🇷
+        </footer>
+
+      </main>
+    </div>
+  );
+}
