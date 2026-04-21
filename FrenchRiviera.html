@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南法 x 意大利 7日「男人的浪漫」Chill 遊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans HK"', 'sans-serif'],
+                    },
+                    colors: {
+                        riviera: {
+                            blue: '#1E3A8A',
+                            cyan: '#06B6D4',
+                            sun: '#F59E0B',
+                            sand: '#F3F4F6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8fafc; }
+        .day-card { transition: all 0.3s ease; }
+        .day-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="text-gray-800 antialiased font-sans">
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-riviera-blue to-riviera-cyan text-white pb-16 pt-20 px-6 text-center rounded-b-[3rem] shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-flex items-center justify-center p-3 bg-white/20 rounded-full mb-6 backdrop-blur-sm">
+                <i data-lucide="palmtree" class="w-8 h-8 text-white"></i>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">南法 x 意大利<br><span class="text-riviera-sun">7日「男人的浪漫」Chill 遊</span></h1>
+            <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">食好嘢、去沙灘、飲杯酒、睇靚女。唔使餐餐捱貴價，最緊要夠 Chill 夠貼地！</p>
+            
+            <!-- Base Info -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 max-w-xl mx-auto text-left flex items-start gap-4">
+                <i data-lucide="map-pin-home" class="w-8 h-8 text-riviera-sun shrink-0 mt-1"></i>
+                <div>
+                    <h3 class="font-bold text-xl text-white mb-2">基地 (Base)：7晚都住尼斯 (Nice)</h3>
+                    <p class="text-blue-50 text-sm leading-relaxed">
+                        建議喺 Airbnb 租 <strong class="text-white">Vieux Nice (老城區)</strong> 或 <strong class="text-white">Port Lympia (尼斯港口)</strong>。夜晚落街大把酒吧，飲完行返去就得，搭火車去 Monaco/Italy 亦極方便。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-6 py-12">
+        
+        <h2 class="text-3xl font-black text-gray-900 mb-8 flex items-center gap-3">
+            <i data-lucide="calendar-days" class="text-riviera-blue"></i> 每日詳細行程
+        </h2>
+
+        <!-- Itinerary Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Day 1 -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 day-card flex flex-col h-full">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="bg-riviera-blue text-white text-xs font-bold px-3 py-1 rounded-full">Day 1</span>
+                    <span class="text-sm font-semibold text-gray-500">尼斯 Nice</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">到達尼斯：感受南法陽光與微醺</h3>
+                <ul class="space-y-3 flex-grow text-sm text-gray-600">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="sun" class="w-4 h-4 text-riviera-sun mt-1 shrink-0"></i>
+                        <span>去 Airbnb 放低行李。直接行去 <strong>Promenade des Anglais</strong>，沿海邊散步，感受陽光兼昅下沿途索女。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="utensils" class="w-4 h-4 text-orange-500 mt-1 shrink-0"></i>
+                        <span>晚餐去食 <strong>Chez René Socca</strong>。平民街頭小食，買鷹嘴豆烤餅、炸海鮮配生啤坐街邊吹水。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="beer" class="w-4 h-4 text-yellow-500 mt-1 shrink-0"></i>
+                        <span>夜晚去 <strong>Wayne’s Bar</strong>，傳奇英式 Pub 氣氛極佳；或去 <strong>Shapko Bar</strong> 聽 Live Music。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 day-card flex flex-col h-full">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="bg-riviera-blue text-white text-xs font-bold px-3 py-1 rounded-full">Day 2</span>
+                    <span class="text-sm font-semibold text-gray-500">尼斯 Nice</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">海灘日：沙灘、海鮮與夕陽</h3>
+                <ul class="space-y-3 flex-grow text-sm text-gray-600">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="camera" class="w-4 h-4 text-blue-500 mt-1 shrink-0"></i>
+                        <span>早上行上 <strong>Castle Hill (城堡山)</strong> 影尼斯標誌性全景。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="waves" class="w-4 h-4 text-cyan-500 mt-1 shrink-0"></i>
+                        <span>下午去沙灘。平玩：買支冰凍 Rosé 去公眾沙灘；豪玩：去 <strong>Blue Beach</strong> 租太陽椅。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="wine" class="w-4 h-4 text-red-500 mt-1 shrink-0"></i>
+                        <span>黃昏去 <strong>Waka Bar</strong> 或 <strong>Movida</strong> 睇女兼睇日落。晚餐去 <strong>Di Più</strong> 食大件夾抵食意粉/Pizza。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 day-card flex flex-col h-full">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="bg-riviera-blue text-white text-xs font-bold px-3 py-1 rounded-full">Day 3</span>
+                    <span class="text-sm font-semibold text-gray-500">埃茲 Eze</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">懸崖小鎮：壯觀海景</h3>
+                <ul class="space-y-3 flex-grow text-sm text-gray-600">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="bus" class="w-4 h-4 text-gray-500 mt-1 shrink-0"></i>
+                        <span>喺 Nice 搭 82 號巴士去 <strong>Eze Village</strong> (約30分鐘)。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="leaf" class="w-4 h-4 text-green-500 mt-1 shrink-0"></i>
+                        <span>參觀鎮頂熱帶植物園，海景明信片級別。鎮內餐廳較貴，建議買法包三文治坐海景位食。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="martini" class="w-4 h-4 text-pink-500 mt-1 shrink-0"></i>
+                        <span>傍晚返 Nice Port。去 <strong>Boston Bar</strong> 飲杯嘢，感受本地年輕人氣氛。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 day-card flex flex-col h-full border-t-4 border-t-yellow-400">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full">Day 4</span>
+                    <span class="text-sm font-semibold text-gray-500">摩納哥 Monaco</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">摩納哥：體驗富豪生活</h3>
+                <ul class="space-y-3 flex-grow text-sm text-gray-600">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="anchor" class="w-4 h-4 text-blue-800 mt-1 shrink-0"></i>
+                        <span>火車20分鐘到達。出站去 <strong>Port Hercules</strong> 睇超級遊艇。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="shopping-bag" class="w-4 h-4 text-purple-500 mt-1 shrink-0"></i>
+                        <span>午餐去室內市集，食平靚正摩納哥特色小食 Barbagiuan。下午去賭場門口睇名車，再去 <strong>Larvotto Beach</strong>。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="beer" class="w-4 h-4 text-yellow-600 mt-1 shrink-0"></i>
+                        <span>黃昏去 <strong>Brasserie de Monaco</strong>，本地手工啤酒廠 Happy Hour 啤酒半價！</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 day-card flex flex-col h-full border-t-4 border-t-green-500">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Day 5</span>
+                    <span class="text-sm font-semibold text-gray-500">文蒂米利亞 Ventimiglia</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">意大利：狂食平價海鮮</h3>
+                <ul class="space-y-3 flex-grow text-sm text-gray-600">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="train" class="w-4 h-4 text-gray-500 mt-1 shrink-0"></i>
+                        <span>火車50分鐘過境。建議逢星期五去，有全歐洲最大露天市集。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="pizza" class="w-4 h-4 text-orange-600 mt-1 shrink-0"></i>
+                        <span>午餐去 <strong>Pasta & Basta</strong> 狂食青口、海鮮意粉！下午去 <strong>Le Calandre Beach</strong> (罕有真幼沙沙灘，超多意大利女仔)。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="glass-water" class="w-4 h-4 text-orange-400 mt-1 shrink-0"></i>
+                        <span>黃昏街邊體驗 <strong>Aperitivo</strong> 文化，叫 Aperol Spritz 送大堆小食。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Day 6 -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 day-card flex flex-col h-full border-t-4 border-t-green-500">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Day 6</span>
+                    <span class="text-sm font-semibold text-gray-500">聖雷莫 San Remo</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">聖雷莫：意式度假風情</h3>
+                <ul class="space-y-3 flex-grow text-sm text-gray-600">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="map" class="w-4 h-4 text-amber-600 mt-1 shrink-0"></i>
+                        <span>由 Ventimiglia 或 Nice 搭火車前往。早上行 <strong>La Pigna (老城區)</strong>。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="bike" class="w-4 h-4 text-teal-500 mt-1 shrink-0"></i>
+                        <span>下午租單車踩絕美海岸單車徑 (舊火車軌改建)。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="music" class="w-4 h-4 text-indigo-500 mt-1 shrink-0"></i>
+                        <span>傍晚去夜生活核心 <strong>Piazza Bresca</strong>，意大利女仔超級熱情，飲嘢傾偈一流。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Day 7 -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 day-card flex flex-col h-full">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="bg-riviera-blue text-white text-xs font-bold px-3 py-1 rounded-full">Day 7</span>
+                    <span class="text-sm font-semibold text-gray-500">尼斯 Nice</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">尼斯最後衝刺</h3>
+                <ul class="space-y-3 flex-grow text-sm text-gray-600">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="shopping-cart" class="w-4 h-4 text-red-400 mt-1 shrink-0"></i>
+                        <span>瞓到自然醒，去 <strong>Cours Saleya 市集</strong> 買橄欖油、薰衣草梘做手信。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="utensils-crossed" class="w-4 h-4 text-gray-700 mt-1 shrink-0"></i>
+                        <span>午餐結尾大餐：<strong>Bocca Nissa</strong>，極有 Feel 嘅 Rooftop 餐廳，地中海風情滿分。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="plane-takeoff" class="w-4 h-4 text-blue-500 mt-1 shrink-0"></i>
+                        <span>下午執完行李，搭輕鐵 (Tram L2) 直達機場回程。</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Survival Tips Section -->
+        <div class="mt-16 bg-gray-900 rounded-3xl p-8 md:p-12 text-white shadow-xl">
+            <h2 class="text-3xl font-black mb-8 flex items-center gap-3">
+                <i data-lucide="lightbulb" class="text-yellow-400"></i> 實用生存貼士 (兄弟版)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="flex gap-4">
+                    <div class="bg-gray-800 p-3 rounded-xl h-fit">
+                        <i data-lucide="smartphone" class="w-6 h-6 text-cyan-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1 text-cyan-300">火車 App 必備</h4>
+                        <p class="text-gray-400 text-sm">下載 <strong>SNCF Connect</strong> App。所有去 Monaco 同 Italy 嘅飛都喺 App 買，千祈唔好去火車站排隊買飛，部售票機成日壞。</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="bg-gray-800 p-3 rounded-xl h-fit">
+                        <i data-lucide="footprints" class="w-6 h-6 text-orange-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1 text-orange-300">沙灘裝備攻略</h4>
+                        <p class="text-gray-400 text-sm">Nice 嘅沙灘係<strong>石灘 (Pebbles)</strong>，踩落去有啲痛。建議帶對拖鞋/厚底涼鞋，或者去 Decathlon 買對水上活動鞋。</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="bg-gray-800 p-3 rounded-xl h-fit">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-green-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1 text-green-300">治安與安全</h4>
+                        <p class="text-gray-400 text-sm">南法整體安全，但火車站附近夜晚較雜，市集小心扒手。幾個男人一齊行基本上冇人敢搞，銀包電話放好就得。</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-4">
+                    <div class="bg-gray-800 p-3 rounded-xl h-fit">
+                        <i data-lucide="message-circle" class="w-6 h-6 text-pink-400"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1 text-pink-300">溝通與語言</h4>
+                        <p class="text-gray-400 text-sm">餐廳講英文完全冇問題。開口講句 <em>Bonjour</em> (你好) 同 <em>Merci</em> (唔該)，法國 Waiter 態度會好十倍，好易傾得埋。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 text-sm">
+        <p>Enjoy your trip, gentlemen! 🍻</p>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
