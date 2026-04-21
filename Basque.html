@@ -60,13 +60,13 @@
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center">
                     <span class="font-heading text-2xl font-bold tracking-wider text-basque-dark">BASQUE<span class="text-basque-red">.</span>TRIP</span>
-                    <span class="ml-2 text-xs bg-gray-200 px-2 py-1 rounded text-gray-600">FR 🇫🇷 x ES 🇪🇸</span>
+                    <span class="ml-2 text-xs bg-gray-200 px-2 py-1 rounded text-gray-600">Global Bros 🌍</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden md:flex space-x-6">
                     <a href="#vibe" class="text-gray-800 hover:text-basque-red font-semibold transition">跨國Vibe</a>
+                    <a href="#logistics" class="text-gray-800 hover:text-basque-red font-semibold transition">三地會師</a>
                     <a href="#itinerary" class="text-gray-800 hover:text-basque-red font-semibold transition">雙國路線</a>
                     <a href="#nightlife" class="text-gray-800 hover:text-basque-red font-semibold transition">搵食蒲點</a>
-                    <a href="#tips" class="text-gray-800 hover:text-basque-red font-semibold transition">生存手冊</a>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-gray-800 hover:text-basque-red focus:outline-none">
@@ -78,9 +78,9 @@
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#vibe" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">跨國Vibe</a>
+                <a href="#logistics" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">三地會師</a>
                 <a href="#itinerary" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">雙國路線</a>
                 <a href="#nightlife" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">搵食蒲點</a>
-                <a href="#tips" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">生存手冊</a>
             </div>
         </div>
     </nav>
@@ -88,19 +88,20 @@
     <!-- Hero Section -->
     <header class="hero-bg h-screen flex flex-col justify-center items-center text-center px-4 relative pt-16">
         <div class="animate-fade-in-up">
-            <div class="flex justify-center space-x-4 mb-4">
-                <span class="bg-basque-red text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-widest shadow-lg">Spain 🇪🇸</span>
-                <span class="bg-french-blue text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-widest shadow-lg">France 🇫🇷</span>
+            <div class="flex justify-center space-x-3 mb-4">
+                <span class="bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full border border-gray-600 shadow-lg">🇭🇰 HKG</span>
+                <span class="bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full border border-gray-600 shadow-lg">🇬🇧 UK</span>
+                <span class="bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full border border-gray-600 shadow-lg">🇨🇦 CAN</span>
             </div>
             <h1 class="text-5xl md:text-7xl font-heading text-white font-bold mb-4 drop-shadow-lg">
-                法西跨國 <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-basque-red">CHILL 爆之旅</span>
+                GLOBAL BROS <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-basque-red">巴斯克大會師</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 font-light shadow-sm">
-                7日6夜。遊走西班牙豪邁 Pintxos 吧，直闖法國浪漫衝浪天堂 Biarritz。靚海灘、食好西、睇法國及西班牙靚女！
+                三個麻甩佬，三個時區。7日6夜跨越西法邊境，啤酒、海浪、Pintxos。兄弟，五月 Bilbao 見！
             </p>
-            <a href="#itinerary" class="inline-block bg-basque-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg">
-                開始跨國探索 <i class="fas fa-arrow-down ml-2"></i>
+            <a href="#logistics" class="inline-block bg-basque-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg">
+                查看會合攻略 <i class="fas fa-arrow-down ml-2"></i>
             </a>
         </div>
         
@@ -111,8 +112,75 @@
         </div>
     </header>
 
+    <!-- NEW: Global Logistics Section -->
+    <section id="logistics" class="py-16 md:py-24 px-4 max-w-7xl mx-auto bg-white">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-basque-dark mb-4">🌍 三地會師：航班與時差攻略 <span class="text-basque-red">.</span></h2>
+            <p class="text-gray-600 max-w-3xl mx-auto">統一目的地：<strong class="text-basque-dark">畢爾包機場 (Bilbao Airport - BIO)</strong>。建議大家盡量買同一日下晝/黃昏抵達嘅航班，方便一齊行動。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- UK Bro -->
+            <div class="bg-gray-50 rounded-2xl p-6 border-t-4 border-blue-800 shadow-sm relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 opacity-10">
+                    <i class="fas fa-plane text-8xl"></i>
+                </div>
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl mr-3">🇬🇧</span>
+                    <h3 class="text-xl font-bold text-gray-800">英國代表 (先頭部隊)</h3>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li><i class="fas fa-plane-departure text-gray-400 w-5"></i> <strong>航班：</strong> 倫敦 (LGW/LHR) 有廉航 Vueling/EasyJet 或 BA 直飛 BIO，車程只需 ~2 小時。</li>
+                    <li><i class="fas fa-clock text-gray-400 w-5"></i> <strong>時差：</strong> +1 小時 (基本上無感覺)。</li>
+                    <li><i class="fas fa-star text-yellow-500 w-5"></i> <strong>任務：</strong> 因為你飛最近最輕鬆，強烈建議你<strong>做先頭部隊</strong>。提早半日到埗，去 Airbnb 攞鎖匙、買定幾 Pack 啤酒雪凍佢等兄弟。</li>
+                    <li><i class="fas fa-passport text-gray-400 w-5"></i> <strong>注意：</strong> 記得 Check BNO/英國護照有效期 (脫歐後要求：簽發少於10年，最少3個月有效期)。</li>
+                </ul>
+            </div>
+
+            <!-- HK Bro -->
+            <div class="bg-gray-50 rounded-2xl p-6 border-t-4 border-red-600 shadow-sm relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 opacity-10">
+                    <i class="fas fa-plane text-8xl"></i>
+                </div>
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl mr-3">🇭🇰</span>
+                    <h3 class="text-xl font-bold text-gray-800">香港代表 (長途跋涉)</h3>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li><i class="fas fa-plane-departure text-gray-400 w-5"></i> <strong>航班：</strong> 冇直航。建議搭國泰/漢莎去 法蘭克福(FRA) 或 巴黎(CDG)，再轉細機飛 BIO，總共約 15-18 小時。</li>
+                    <li><i class="fas fa-clock text-gray-400 w-5"></i> <strong>時差：</strong> -6 小時 (日夜顛倒)。夜晚 10 點出去飲酒，等於香港凌晨 4 點。</li>
+                    <li><i class="fas fa-star text-yellow-500 w-5"></i> <strong>任務：</strong> 上機盡量瞓。落機第一日要靠意志力撐住，可以飲杯 Espresso 或者 Txakoli 白酒頂住，頂到當地夜晚 11 點先好瞓。</li>
+                    <li><i class="fas fa-passport text-gray-400 w-5"></i> <strong>注意：</strong> 特區護照/BNO 去西班牙法國都係免簽證，直接過關。</li>
+                </ul>
+            </div>
+
+            <!-- CA Bro -->
+            <div class="bg-gray-50 rounded-2xl p-6 border-t-4 border-red-500 shadow-sm relative overflow-hidden">
+                <div class="absolute -right-4 -top-4 opacity-10">
+                    <i class="fas fa-plane text-8xl"></i>
+                </div>
+                <div class="flex items-center mb-4">
+                    <span class="text-3xl mr-3">🇨🇦</span>
+                    <h3 class="text-xl font-bold text-gray-800">加拿大代表 (日夜顛倒)</h3>
+                </div>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li><i class="fas fa-plane-departure text-gray-400 w-5"></i> <strong>航班：</strong> 視乎東岸/西岸出發。多倫多(YYZ)/蒙特利爾(YUL) 出發可經 倫敦/馬德里/巴黎 轉機去 BIO。</li>
+                    <li><i class="fas fa-clock text-gray-400 w-5"></i> <strong>時差：</strong> +6 至 +9 小時。你同香港代表嘅時差啱啱好係相反！</li>
+                    <li><i class="fas fa-star text-yellow-500 w-5"></i> <strong>任務：</strong> 因為時差關係，你哋三個嘅眼瞓時間會錯開晒。善用呢點，當其中一個兄弟飲醉或者眼瞓，另一個就要負責睇住個場同埋埋單！</li>
+                    <li><i class="fas fa-passport text-gray-400 w-5"></i> <strong>注意：</strong> 加拿大護照同樣免簽證入神根區。</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mt-8 bg-basque-light p-6 rounded-xl border border-gray-200 text-center">
+            <h4 class="font-bold text-lg mb-2"><i class="fas fa-handshake text-basque-red mr-2"></i> 最佳會合策略 (Rendezvous Point)</h4>
+            <p class="text-gray-600 text-sm max-w-2xl mx-auto">唔好喺機場呆等！因為大家航班抵達時間一定唔同。<br>
+            <strong>建議做法：</strong> 英國代表先去 Airbnb 放低行李。香港同加拿大代表落機後，直接搭機場巴士 (A3247線，€3) 出市區。大家直接喺 <strong>Bilbao 舊城區嘅 Plaza Nueva 廣場</strong> 搵間露天 Pintxos 吧會合，一見面即刻啪杯啤酒，旅行正式開始！</p>
+        </div>
+    </section>
+
     <!-- Vibe Check Section -->
-    <section id="vibe" class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
+    <section id="vibe" class="py-16 md:py-24 px-4 max-w-7xl mx-auto border-t border-gray-100">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-heading font-bold text-basque-dark mb-4">雙國 VIBE CHECK <span class="text-basque-red">.</span></h2>
             <p class="text-gray-600 max-w-2xl mx-auto">一次旅行，兩種享受。由粗獷熱情嘅西班牙酒吧，玩到法式慵懶嘅海岸，體驗最地道嘅兩國後生仔生活。</p>
@@ -157,8 +225,8 @@
                         <span class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt"></i> Bilbao (西班牙)</span>
                     </div>
                     <div class="md:w-3/4">
-                        <h3 class="text-2xl font-bold mb-2">落地熱身：Bilbao 舊城微醺</h3>
-                        <p class="text-gray-300 text-sm">落機直踩 Bilbao。傍晚去 <strong>Muelle Marzana</strong> 河畔買杯啤酒，同當地文青一齊坐石壆睇日落，極易搭訕。夜晚去舊城區 Plaza Nueva 進行第一回 Pintxos 掃街。</p>
+                        <h3 class="text-2xl font-bold mb-2">三地會師：Bilbao 舊城微醺</h3>
+                        <p class="text-gray-300 text-sm">各自落機抵達 Bilbao。英國代表負責搞掂 Airbnb，香港同加拿大代表拖住時差身軀前往舊城區會合。傍晚去 <strong>Muelle Marzana</strong> 河畔買杯啤酒睇日落，夜晚去 Plaza Nueva 進行第一回 Pintxos 掃街，一齊對抗 Jet Lag！</p>
                     </div>
                 </div>
 
@@ -185,7 +253,7 @@
                         </div>
                         <h3 class="text-2xl font-bold mb-3">法式浪漫：歐洲衝浪發源地</h3>
                         <p class="text-gray-300 text-sm mb-3">
-                            搭大巴跨國去法國 <strong>Biarritz</strong> (約1hr)。畫風突變，充滿法式風情。Day 4 黃昏去 <strong>Côte des Basques</strong> 崖邊酒吧飲酒睇日落，全場後生仔女。Day 5 朝早去 <strong>Les Halles 街市</strong>，學法國人咁企喺度食生蠔飲白酒，下午嘆沙灘。
+                            搭大巴跨國去法國 <strong>Biarritz</strong> (約1hr)，唔使查 Passport。畫風突變，充滿法式風情。Day 4 黃昏去 <strong>Côte des Basques</strong> 崖邊酒吧飲酒睇日落。Day 5 朝早去 <strong>Les Halles 街市</strong>，學法國人咁企喺度食生蠔飲白酒，下午嘆沙灘。
                         </p>
                     </div>
                 </div>
@@ -197,8 +265,8 @@
                         <span class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt"></i> Bilbao (西班牙回程)</span>
                     </div>
                     <div class="md:w-3/4">
-                        <h3 class="text-2xl font-bold mb-2">最後一擊：回歸 Bilbao</h3>
-                        <p class="text-gray-300 text-sm">搭大巴返 Bilbao (約2hr)。最後一晚去 <strong>Calle Ledesma</strong> 酒吧街狂歡，同西班牙熱情講 Bye Bye。Day 7 去機場搭飛機返香港。</p>
+                        <h3 class="text-2xl font-bold mb-2">最後一擊：各散東西</h3>
+                        <p class="text-gray-300 text-sm">搭大巴返 Bilbao (約2hr)。最後一晚去 <strong>Calle Ledesma</strong> 酒吧街狂歡。Day 7 去機場，兄弟們各自飛返香港、英國同加拿大，期待下次聚會！</p>
                     </div>
                 </div>
             </div>
@@ -217,7 +285,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Spain Section -->
             <div class="bg-white rounded-2xl shadow-lg border-2 border-basque-red overflow-hidden relative">
-                <div class="absolute top-0 right-0 bg-basque-red text-white px-3 py-1 text-xs font-bold rounded-bl-lg">SPAIN</div>
+                <div class="absolute top-0 right-0 bg-basque-red text-white px-3 py-1 text-xs font-bold rounded-bl-lg">SPAIN 🇪🇸</div>
                 <div class="p-6 pt-10 space-y-6">
                     <div>
                         <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-church text-gray-500 mr-2"></i> Atari Gastroteka (San Sebastián)</h4>
@@ -225,7 +293,7 @@
                     </div>
                     <hr class="border-gray-100">
                     <div>
-                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-drumstick-bite text-orange-500 mr-2"></i> 蘋果酒莊 Petritegi (San Sebastián 近郊)</h4>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-drumstick-bite text-orange-500 mr-2"></i> 蘋果酒莊 Petritegi (近郊)</h4>
                         <p class="text-sm text-gray-600 mt-1"><strong>【男人浪漫】</strong> 畀 €40 任飲大木桶噴出嚟嘅蘋果酒，配超級巨型炭烤牛扒，3個兄弟去最夾！</p>
                     </div>
                     <hr class="border-gray-100">
@@ -238,11 +306,11 @@
 
             <!-- France Section -->
             <div class="bg-white rounded-2xl shadow-lg border-2 border-french-blue overflow-hidden relative">
-                <div class="absolute top-0 right-0 bg-french-blue text-white px-3 py-1 text-xs font-bold rounded-bl-lg">FRANCE</div>
+                <div class="absolute top-0 right-0 bg-french-blue text-white px-3 py-1 text-xs font-bold rounded-bl-lg">FRANCE 🇫🇷</div>
                 <div class="p-6 pt-10 space-y-6">
                     <div>
                         <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-water text-blue-400 mr-2"></i> Etxola Bibi (Biarritz)</h4>
-                        <p class="text-sm text-gray-600 mt-1"><strong>【日落 Chill 爆】</strong> 喺 Côte des Basques 崖邊嘅半露天酒吧。望住成個海灘同滑浪客，全場都係打扮隨性嘅法國靚仔靚女，買杯啤酒望海發呆。</p>
+                        <p class="text-sm text-gray-600 mt-1"><strong>【日落 Chill 爆】</strong> 喺 Côte des Basques 崖邊嘅半露天酒吧。望住滑浪客，全場都係打扮隨性嘅法國靚仔靚女，買杯啤酒望海發呆。</p>
                     </div>
                     <hr class="border-gray-100">
                     <div>
@@ -251,38 +319,9 @@
                     </div>
                     <hr class="border-gray-100">
                     <div>
-                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-glass-cheers text-purple-500 mr-2"></i> Port des Pêcheurs (Biarritz)</h4>
-                        <p class="text-sm text-gray-600 mt-1"><strong>【隱世漁港晚餐】</strong> 舊漁港改建嘅小餐廳區，喺海邊食新鮮海鮮，晚上氣氛浪漫又 Relax。</p>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-glass-cheers text-purple-500 mr-2"></i> Port des Pêcheurs</h4>
+                        <p class="text-sm text-gray-600 mt-1"><strong>【隱世漁港】</strong> 舊漁港改建嘅小餐廳區，喺海邊食新鮮海鮮，晚上氣氛浪漫又 Relax。</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Logistics & Tips Section -->
-    <section id="tips" class="py-16 md:py-24 bg-gray-100 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold text-center mb-12">跨國生存手冊 <span class="text-basque-red">.</span></h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Transport -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm">
-                    <h3 class="text-xl font-bold mb-4 border-b pb-2"><i class="fas fa-bus text-blue-500 mr-2"></i> 跨國交通極簡單</h3>
-                    <ul class="space-y-3 text-sm text-gray-700">
-                        <li><strong>過境免查：</strong> 兩國都係神根區，搭大巴直接過境，唔使查 Passport，感覺似搭緊普通城巴。</li>
-                        <li><strong>跨國巴士：</strong> 買 <strong>ALSA</strong> 或 <strong>FlixBus</strong>。San Sebastián 去 Biarritz 車程大約 45 分鐘至 1 小時，車費約 €5-€10，平到笑。</li>
-                        <li><strong>長途回程：</strong> Biarritz 直接搭巴士返 Bilbao，大約 2 - 2.5 小時。</li>
-                    </ul>
-                </div>
-
-                <!-- Culture & Budget -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm">
-                    <h3 class="text-xl font-bold mb-4 border-b pb-2"><i class="fas fa-euro-sign text-yellow-500 mr-2"></i> 消費與潛規則</h3>
-                    <ul class="space-y-3 text-sm text-gray-700">
-                        <li><strong>語言：</strong> 兩邊英文都未必極流利。西班牙邊講 Hola/Gracias；法國邊記住講 Bonjour/Merci，法國人聽到你講法文會 Nice 好多！</li>
-                        <li><strong>貨幣：</strong> 兩邊都係用歐羅 (Euro)，一張信用卡走天涯。</li>
-                        <li><strong>物價：</strong> 法國 Biarritz 會比西班牙貴少少 (大約貴15-20%)，所以喺西班牙可以豪食，去到法國就 Relax 飲酒食生蠔。</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -290,7 +329,7 @@
 
     <!-- Footer -->
     <footer class="bg-basque-dark text-gray-400 py-8 text-center font-sm">
-        <p>為 3 位兄弟度身訂造。法西跨國，Chill 住飲！🍻</p>
+        <p>為 3 位兄弟度身訂造。HKG ✈️ LHR ✈️ YYZ 跨國會師，Chill 住飲！🍻</p>
         <p class="mt-2 text-xs">Pintxos 🇪🇸 • Oysters 🇫🇷 • Surfing 🏄‍♂️</p>
     </footer>
 
