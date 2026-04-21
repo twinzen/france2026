@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-HK" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baltic Bros Trip | Latvia & Estonia</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans HK"', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: '#F59E0B', // amber-500 for a premium vibe
+                        dark: '#0F172A', // slate-900
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1542451313056-b7c8e626645f?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-300 font-sans antialiased selection:bg-gold selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-card border-b-0 border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-black text-xl text-white tracking-wider uppercase">
+                    <i class="fa-solid fa-martini-glass-citrus text-gold mr-2"></i>Baltic<span class="text-gold">Bros</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6 text-sm font-medium">
+                        <a href="#itinerary" class="hover:text-gold transition-colors">7日行程</a>
+                        <a href="#stay" class="hover:text-gold transition-colors">住宿策略</a>
+                        <a href="#nightlife" class="hover:text-gold transition-colors">蒲點與靚女</a>
+                        <a href="#dining" class="hover:text-gold transition-colors">必食推介</a>
+                        <a href="#tips" class="hover:text-gold transition-colors">防伏貼士</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-bg min-h-screen flex items-center justify-center pt-16">
+        <div class="text-center px-4 max-w-4xl mx-auto">
+            <span class="text-gold font-bold tracking-widest uppercase text-sm mb-4 block">Riga 🇱🇻 & Tallinn 🇪🇪</span>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+                波羅的海<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-300">兄弟 Chill 爆之旅</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+                專為 3 個男人度身訂造的 7 日完美行程：陽光沙灘、冰屋桑拿、大口食肉、精釀啤酒，以及東歐與北歐最頂級的夜生活體驗。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#itinerary" class="bg-gold hover:bg-yellow-500 text-dark font-bold py-3 px-8 rounded-full transition-transform transform hover:-translate-y-1 shadow-[0_0_15px_rgba(245,158,11,0.5)]">
+                    <i class="fa-solid fa-plane-departure mr-2"></i> 開始旅程
+                </a>
+                <a href="#nightlife" class="glass-card hover:bg-slate-800 text-white font-bold py-3 px-8 rounded-full transition-transform transform hover:-translate-y-1">
+                    <i class="fa-solid fa-champagne-glasses mr-2"></i> 直入重點 (夜生活)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-32">
+
+        <!-- Section: Itinerary -->
+        <section id="itinerary" class="scroll-mt-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4"><i class="fa-solid fa-map-location-dot text-gold mr-3"></i>7日行程總覽</h2>
+                <p class="text-slate-400">Riga 入, Tallinn 走。節奏輕鬆，下半場才是主角。</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Part 1: Latvia -->
+                <div class="glass-card rounded-2xl p-8 border-t-4 border-t-red-800 hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-shadow">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-white">Part 1: 拉脫維亞 (Riga)</h3>
+                        <span class="text-3xl">🇱🇻</span>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex">
+                            <div class="flex-shrink-0 w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-gold font-bold mr-4 border border-slate-600">D1</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">抵達里加，感受老城夜生活</h4>
+                                <p class="text-slate-400 mt-1">老城區 Cafe Chill 下。夜晚去 Folkklubs ALA Pagrabs 食大烤肉飲生啤，直落 Coyote Fly 或 Gems 等頂級 Nightclub 睇索女。</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div class="flex-shrink-0 w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-gold font-bold mr-4 border border-slate-600">D2</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Jurmala 沙灘俱樂部 (Beach Club)</h4>
+                                <p class="text-slate-400 mt-1">搭火車30分鐘直達。Book 定 Havana Terrace 太陽椅，飲 Cocktail 睇比堅尼靚女，完美演繹 Relax。</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div class="flex-shrink-0 w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-gold font-bold mr-4 border border-slate-600">D3</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">文青潮區與飛船市場</h4>
+                                <p class="text-slate-400 mt-1">中央市場買平價魚子醬送啤酒。黃昏去 Tallinn Street Quarter 工業風潮人區，街頭塗鴉配 Food Trucks，結識本地型女。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Part 2: Estonia -->
+                <div class="glass-card rounded-2xl p-8 border-t-4 border-t-blue-600 hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-shadow">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold text-white">Part 2: 愛沙尼亞 (Tallinn)</h3>
+                        <span class="text-3xl">🇪🇪</span>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex">
+                            <div class="flex-shrink-0 w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-gold font-bold mr-4 border border-slate-600">D4</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">豪華巴士直達，走入中世紀</h4>
+                                <p class="text-slate-400 mt-1">搭 Lux Express 豪華巴士(4.5hrs) 補眠。遊覽老城區觀景台，晚餐 Rataskaevu 16，夜蒲 Venus Club。</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div class="flex-shrink-0 w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-gold font-bold mr-4 border border-slate-600">D5</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">港口海景、桑拿與美食</h4>
+                                <p class="text-slate-400 mt-1">Noblessner 區睇富貴靚人，<span class="text-gold font-bold">必玩 Iglupark 冰屋桑拿</span> (焗完跳海)。夜晚去 Telliskivi 潮人區飲 Craft Beer。</p>
+                            </div>
+                        </li>
+                        <li class="flex">
+                            <div class="flex-shrink-0 w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-gold font-bold mr-4 border border-slate-600">D6-7</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">最後狂歡與回程</h4>
+                                <p class="text-slate-400 mt-1">Pirita Beach 曬太陽或 Spa 放鬆。NOA 海景 Fine Dining 總結旅程。Day 7 買 Black Balsam 特產回程。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Accommodation & Transport -->
+        <section id="stay" class="scroll-mt-24">
+            <div class="bg-gradient-to-r from-slate-800 to-slate-900 rounded-3xl p-8 md:p-12 border border-slate-700 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 text-slate-800 opacity-50">
+                    <i class="fa-solid fa-bed text-9xl"></i>
+                </div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-black text-white mb-8"><i class="fa-solid fa-hotel text-gold mr-3"></i>住宿與交通策略</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div>
+                            <h3 class="text-xl font-bold text-gold mb-3">📍 住邊區最就腳？</h3>
+                            <p class="mb-4">三個男人出遊，最緊要<strong>位置方便、行路可以去到酒吧區</strong>，玩到幾夜都不怕。</p>
+                            <ul class="space-y-3">
+                                <li><strong class="text-white">🇱🇻 Riga (里加):</strong> 必定住 <strong>老城區 (Vecrīga)</strong> 或 Centrs。推薦 4/5 星酒店 (如 Radisson Blu Latvija)，有天台酒吧睇景一流。</li>
+                                <li><strong class="text-white">🇪🇪 Tallinn (塔林):</strong> 推薦 <strong>Kalamaja 區</strong> 或老城區。Kalamaja 是高尚住宅區，治安極好，出入都是打扮入時的本地年輕人，租 Airbnb 最 Chill。</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gold mb-3">🚌 跨國與市內交通</h3>
+                            <ul class="space-y-4">
+                                <li class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                                    <strong class="text-white block mb-1">Lux Express (Lounge Class)</strong>
+                                    里加往返塔林必搭！單人真皮大梳化位、免費熱飲機同電影睇，舒舒服服睡 4 個鐘。
+                                </li>
+                                <li class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                                    <strong class="text-white block mb-1">Bolt App (必備)</strong>
+                                    波羅的海的 Uber。叫車極平極快。<strong>千萬不要在街邊截的士</strong>，極容易被劏客。
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Nightlife -->
+        <section id="nightlife" class="scroll-mt-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4"><i class="fa-solid fa-fire text-gold mr-3"></i>蒲點與「睇女」實戰攻略</h2>
+                <p class="text-slate-400">東歐派對之都 vs 北歐冷淡風，兩個國家兩種體驗。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Riga Nightlife -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden group">
+                    <div class="h-48 bg-slate-700 bg-[url('https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"></div>
+                    <div class="p-8 relative z-10 bg-slate-800">
+                        <h3 class="text-2xl font-bold text-white mb-4">🇱🇻 里加：狂野派對之都</h3>
+                        <ul class="space-y-4 text-slate-300">
+                            <li><span class="text-gold font-bold mr-2">🔥 Pre-drink:</span> <strong>Tallinas iela kvartāls</strong>。舊車廠改建，大學生同型女最愛，氣氛超易識人。</li>
+                            <li><span class="text-gold font-bold mr-2">💎 頂級夜店:</span> <strong>First Club</strong> (河邊高檔，非富則貴) / <strong>Tower Nightclub</strong> (波羅的海最大)。<br><em class="text-sm text-slate-400 mt-1 block">💡 兄弟夾錢開 VIP Table，更容易邀請女仔飲酒。</em></li>
+                            <li><span class="text-gold font-bold mr-2">🏖️ 沙灘睇女:</span> <strong>X.O Beach Lounge (Jurmala)</strong>。Book 定 Cabana 大床，叫香檳睇比堅尼靚女。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tallinn Nightlife -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden group">
+                    <div class="h-48 bg-slate-700 bg-[url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-500 group-hover:scale-105"></div>
+                    <div class="p-8 relative z-10 bg-slate-800">
+                        <h3 class="text-2xl font-bold text-white mb-4">🇪🇪 塔林：北歐微醺風情</h3>
+                        <ul class="space-y-4 text-slate-300">
+                            <li><span class="text-gold font-bold mr-2">🍺 高質酒吧區:</span> <strong>Telliskivi Creative City</strong>。去 Põhjala Brewery 飲 Craft Beer。這裡女生打扮偏向北歐 Minimalist，氣質極佳。</li>
+                            <li><span class="text-gold font-bold mr-2">💃 人氣夜店:</span> <strong>Club Studio</strong>。塔林最受歡迎，兩層不同音樂，週末爆滿，女生質素極高。</li>
+                            <li><span class="text-gold font-bold mr-2">🎉 大眾玩樂:</span> <strong>Venus Club</strong>。歷史悠久，氣氛比較大眾化，非常容易玩得埋。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: MVP Sauna -->
+        <section id="sauna" class="scroll-mt-24">
+            <div class="glass-card p-1 border-2 border-gold rounded-3xl relative">
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-gold text-dark font-black px-6 py-2 rounded-full text-sm tracking-widest">
+                    兄弟遊 MVP 體驗
+                </div>
+                <div class="bg-slate-900 rounded-[1.4rem] p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1582582494705-f8ce0b0c24f0?q=80&w=600&auto=format&fit=crop" alt="Sauna" class="rounded-2xl shadow-lg border border-slate-700">
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <h3 class="text-3xl font-black text-white mb-4">Iglupark 冰屋桑拿 (塔林)</h3>
+                        <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+                            這個是 Chill 爆行程的精華！位於 Noblessner 區海邊。你們可以包一間私人的木製圓頂桑拿房（約 €100-€150）。買定一堆啤酒，三個男人在裡面焗到出大汗，然後直接行出木棧道，<strong>跳入 15 度的波羅的海！</strong>上水後再飲杯冰凍啤酒，爽度爆燈。周圍還有很多外國人一齊玩，氣氛極好。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Dining -->
+        <section id="dining" class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4"><i class="fa-solid fa-utensils text-gold mr-3"></i>高質美食推介</h2>
+                <p class="text-slate-400">食肉、飲酒、打卡，平民與奢華兼備。</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Food Item 1 -->
+                <div class="glass-card p-6 rounded-xl flex items-start">
+                    <div class="text-4xl mr-4 mt-1">🍖</div>
+                    <div>
+                        <h4 class="text-white font-bold text-xl mb-1">Folkklubs ALA Pagrabs <span class="text-sm font-normal text-slate-400 ml-2">(Riga)</span></h4>
+                        <p class="text-slate-400 text-sm">必食「1公斤烤豬手」同蒜香黑麥包條，配當地 Honey Beer。性價比極高，氣氛超好嘅地下酒館。</p>
+                    </div>
+                </div>
+                <!-- Food Item 2 -->
+                <div class="glass-card p-6 rounded-xl flex items-start">
+                    <div class="text-4xl mr-4 mt-1">🦪</div>
+                    <div>
+                        <h4 class="text-white font-bold text-xl mb-1">Barents <span class="text-sm font-normal text-slate-400 ml-2">(Riga)</span></h4>
+                        <p class="text-slate-400 text-sm">里加最頂級海鮮餐廳。如果想豪少少，嚟度食生蠔、魚子醬配白酒，環境極度有 Class。</p>
+                    </div>
+                </div>
+                <!-- Food Item 3 -->
+                <div class="glass-card p-6 rounded-xl flex items-start">
+                    <div class="text-4xl mr-4 mt-1">🍽️</div>
+                    <div>
+                        <h4 class="text-white font-bold text-xl mb-1">Rataskaevu 16 <span class="text-sm font-normal text-slate-400 ml-2">(Tallinn)</span></h4>
+                        <p class="text-slate-400 text-sm">塔林老城內長期排名第一！慢煮鹿肉同烤豬腩肉必點。<strong>極難 Walk-in，必須提前 2-3 星期網上訂位。</strong></p>
+                    </div>
+                </div>
+                <!-- Food Item 4 -->
+                <div class="glass-card p-6 rounded-xl flex items-start">
+                    <div class="text-4xl mr-4 mt-1">🍷</div>
+                    <div>
+                        <h4 class="text-white font-bold text-xl mb-1">NOA Chef's Hall <span class="text-sm font-normal text-slate-400 ml-2">(Tallinn)</span></h4>
+                        <p class="text-slate-400 text-sm">米芝蓮一星 Fine Dining。有無敵波羅的海海景，黃昏去睇日落一流，三個男人著靚少少去食餐好嘅總結旅程。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Survival Guide -->
+        <section id="tips" class="scroll-mt-24 mb-20">
+            <div class="bg-red-900/20 border border-red-900/50 rounded-2xl p-8">
+                <h2 class="text-2xl font-black text-white mb-6 flex items-center">
+                    <i class="fa-solid fa-triangle-exclamation text-red-500 mr-3"></i> 兄弟遊防伏實用貼士
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-red-400 font-bold mb-2">1. 避開「艷舞俱樂部」騙局 (Tourist Trap) 🚫</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">在老城區街頭，如果有熱情的美女行過來搭訕，說帶你們去某間 Bar 飲杯酒，<strong>千萬不要去</strong>。入到去會迫你請她們飲幾百歐羅一杯的「假香檳」。只去我上面推薦或網上評價好的正派 Nightclub！</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">2. 衣著 (Dress Code) 👔</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">波羅的海女生出名貪靚，週末去飲酒必定悉心打扮。想有艷遇，<strong>絕對不能穿拖鞋、短褲或殘舊 T-shirt 去夜店</strong>。Smart Casual (恤衫/靚 Tee + 休閒西褲 + 乾淨波鞋) 是基本入場券。</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">3. 禮儀與搭訕 💬</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">當地人外表比較高冷 (Cold outside, warm inside)。搭訕時保持紳士風度，買杯酒請客，通常會有不錯交流。保持禮貌，唔好太 Chok。</p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-2">4. 最佳出發季節 ☀️</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">如果想去沙灘同睇夏裝靚女，<strong>強烈建議 6月至 8月 去</strong>。日照極長（白夜），氣候舒服（20-25度），全部人都在戶外開 Party。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="text-2xl font-black text-slate-500 mb-4 uppercase tracking-widest">
+                Have a great trip, Bros! 🍻
+            </div>
+            <p class="text-slate-600 text-sm">Generated for the ultimate 7-day Latvia & Estonia experience.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
