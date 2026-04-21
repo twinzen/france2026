@@ -1,0 +1,325 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-HK" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法西跨國！巴斯克兄弟 7日 Chill 爆之旅</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans HK"', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        basque: {
+                            red: '#E10019',
+                            green: '#009B48',
+                            dark: '#1A1A1A',
+                            light: '#F8F9FA'
+                        },
+                        french: {
+                            blue: '#002654'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1A1A1A; }
+        ::-webkit-scrollbar-thumb { background: #E10019; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b30014; }
+        .hero-bg {
+            background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1600130635154-1506b1e60408?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-basque-light text-gray-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-card shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-heading text-2xl font-bold tracking-wider text-basque-dark">BASQUE<span class="text-basque-red">.</span>TRIP</span>
+                    <span class="ml-2 text-xs bg-gray-200 px-2 py-1 rounded text-gray-600">FR 🇫🇷 x ES 🇪🇸</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#vibe" class="text-gray-800 hover:text-basque-red font-semibold transition">跨國Vibe</a>
+                    <a href="#itinerary" class="text-gray-800 hover:text-basque-red font-semibold transition">雙國路線</a>
+                    <a href="#nightlife" class="text-gray-800 hover:text-basque-red font-semibold transition">搵食蒲點</a>
+                    <a href="#tips" class="text-gray-800 hover:text-basque-red font-semibold transition">生存手冊</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-800 hover:text-basque-red focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#vibe" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">跨國Vibe</a>
+                <a href="#itinerary" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">雙國路線</a>
+                <a href="#nightlife" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">搵食蒲點</a>
+                <a href="#tips" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">生存手冊</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-screen flex flex-col justify-center items-center text-center px-4 relative pt-16">
+        <div class="animate-fade-in-up">
+            <div class="flex justify-center space-x-4 mb-4">
+                <span class="bg-basque-red text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-widest shadow-lg">Spain 🇪🇸</span>
+                <span class="bg-french-blue text-white text-xs font-bold px-3 py-1 rounded uppercase tracking-widest shadow-lg">France 🇫🇷</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-heading text-white font-bold mb-4 drop-shadow-lg">
+                法西跨國 <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-basque-red">CHILL 爆之旅</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 font-light shadow-sm">
+                7日6夜。遊走西班牙豪邁 Pintxos 吧，直闖法國浪漫衝浪天堂 Biarritz。靚海灘、食好西、睇法國及西班牙靚女！
+            </p>
+            <a href="#itinerary" class="inline-block bg-basque-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg">
+                開始跨國探索 <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+        
+        <div class="absolute bottom-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-12 md:h-24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.2,190.61,110.8,235.14,104.53,280.4,88.33,321.39,56.44Z" fill="#F8F9FA"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Vibe Check Section -->
+    <section id="vibe" class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-basque-dark mb-4">雙國 VIBE CHECK <span class="text-basque-red">.</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">一次旅行，兩種享受。由粗獷熱情嘅西班牙酒吧，玩到法式慵懶嘅海岸，體驗最地道嘅兩國後生仔生活。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border-t-4 border-basque-red text-center group">
+                <h3 class="text-2xl font-bold mb-2">🇪🇸 西班牙邊 (País Vasco)</h3>
+                <p class="text-gray-500 font-heading tracking-widest mb-4">熱鬧 • 豪邁 • 平靚正</p>
+                <div class="space-y-3 text-sm text-gray-600 text-left">
+                    <p><i class="fas fa-check text-basque-red mr-2"></i> <strong>夜生活：</strong> 企街食 Pintxos，大聲傾偈，氣氛極度狂熱。</p>
+                    <p><i class="fas fa-check text-basque-red mr-2"></i> <strong>飲食：</strong> 蘋果酒、大件炭烤牛扒、海膽撻，重口味極過癮。</p>
+                    <p><i class="fas fa-check text-basque-red mr-2"></i> <strong>女仔：</strong> 熱情、性格開朗、小麥膚色滑浪少女。</p>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border-t-4 border-french-blue text-center group">
+                <h3 class="text-2xl font-bold mb-2">🇫🇷 法國邊 (Pays Basque)</h3>
+                <p class="text-gray-500 font-heading tracking-widest mb-4">浪漫 • 微醺 • 衝浪天堂</p>
+                <div class="space-y-3 text-sm text-gray-600 text-left">
+                    <p><i class="fas fa-check text-french-blue mr-2"></i> <strong>日生活：</strong> 朝早去街市食生蠔飲白酒，下晝沙灘酒吧 Chill 到日落。</p>
+                    <p><i class="fas fa-check text-french-blue mr-2"></i> <strong>飲食：</strong> 新鮮海鮮、芝士、法式薄餅 (Crêpes)。</p>
+                    <p><i class="fas fa-check text-french-blue mr-2"></i> <strong>女仔：</strong> 法式慵懶感、打扮隨性有氣質、顏值極高。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section id="itinerary" class="py-16 md:py-24 bg-basque-dark text-white px-4 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">7日跨國路線圖 <span class="text-basque-red">.</span></h2>
+                <p class="text-gray-400">Bilbao 🇪🇸 ✈️ San Sebastián 🇪🇸 🚆 Biarritz 🇫🇷 🚌 Bilbao 🇪🇸</p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="space-y-8">
+                <!-- Day 1 -->
+                <div class="bg-gray-800 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center border-l-4 border-basque-red hover:bg-gray-700 transition">
+                    <div class="md:w-1/4 mb-4 md:mb-0 text-center md:text-left">
+                        <span class="text-basque-red font-bold text-xl block">Day 1</span>
+                        <span class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt"></i> Bilbao (西班牙)</span>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-2xl font-bold mb-2">落地熱身：Bilbao 舊城微醺</h3>
+                        <p class="text-gray-300 text-sm">落機直踩 Bilbao。傍晚去 <strong>Muelle Marzana</strong> 河畔買杯啤酒，同當地文青一齊坐石壆睇日落，極易搭訕。夜晚去舊城區 Plaza Nueva 進行第一回 Pintxos 掃街。</p>
+                    </div>
+                </div>
+
+                <!-- Day 2-3 -->
+                <div class="bg-gray-800 rounded-2xl overflow-hidden flex flex-col md:flex-row border-l-4 border-basque-red hover:bg-gray-700 transition">
+                    <div class="md:w-1/3 bg-cover bg-center h-48 md:h-auto" style="background-image: url('https://images.unsplash.com/photo-1517618933560-606016149453?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="p-6 md:p-8 md:w-2/3">
+                        <div class="mb-2">
+                            <span class="text-basque-red font-bold text-xl block">Day 2 - Day 3</span>
+                            <span class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt"></i> San Sebastián (西班牙)</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">西班牙狂歡：沙灘與蘋果酒莊</h3>
+                        <p class="text-gray-300 text-sm mb-3">搭巴士(1.5hr)轉場。日頭去 <strong>Zurriola 沙灘</strong> 睇人滑浪(兼睇靚女)。夜晚深入舊城區挑戰全世界最密集酒吧街 (必去 Atari 教堂樓梯底飲酒)。Day 3 預約去蘋果酒莊大啖食炭烤牛扒，任接噴泉 Cider！</p>
+                    </div>
+                </div>
+
+                <!-- Day 4-5 -->
+                <div class="bg-gray-800 rounded-2xl overflow-hidden flex flex-col md:flex-row-reverse border-l-4 border-french-blue hover:bg-gray-700 transition">
+                    <div class="md:w-1/3 bg-cover bg-center h-48 md:h-auto" style="background-image: url('https://images.unsplash.com/photo-1563725516801-b5f63ce5d22f?q=80&w=2071&auto=format&fit=crop');"></div>
+                    <div class="p-6 md:p-8 md:w-2/3">
+                        <div class="mb-2">
+                            <span class="text-french-blue font-bold text-xl block">Day 4 - Day 5</span>
+                            <span class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt"></i> Biarritz (法國)</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">法式浪漫：歐洲衝浪發源地</h3>
+                        <p class="text-gray-300 text-sm mb-3">
+                            搭大巴跨國去法國 <strong>Biarritz</strong> (約1hr)。畫風突變，充滿法式風情。Day 4 黃昏去 <strong>Côte des Basques</strong> 崖邊酒吧飲酒睇日落，全場後生仔女。Day 5 朝早去 <strong>Les Halles 街市</strong>，學法國人咁企喺度食生蠔飲白酒，下午嘆沙灘。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Day 6-7 -->
+                <div class="bg-gray-800 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center border-l-4 border-basque-red hover:bg-gray-700 transition">
+                    <div class="md:w-1/4 mb-4 md:mb-0 text-center md:text-left">
+                        <span class="text-gray-300 font-bold text-xl block">Day 6 - Day 7</span>
+                        <span class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt"></i> Bilbao (西班牙回程)</span>
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="text-2xl font-bold mb-2">最後一擊：回歸 Bilbao</h3>
+                        <p class="text-gray-300 text-sm">搭大巴返 Bilbao (約2hr)。最後一晚去 <strong>Calle Ledesma</strong> 酒吧街狂歡，同西班牙熱情講 Bye Bye。Day 7 去機場搭飛機返香港。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Black Book (Food & Nightlife) -->
+    <section id="nightlife" class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-basque-dark mb-2">男人的浪漫黑皮書 <i class="fas fa-book-open text-basque-red ml-2"></i></h2>
+                <p class="text-gray-600">食好西、睇靚女、識朋友嘅具體名單。</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Spain Section -->
+            <div class="bg-white rounded-2xl shadow-lg border-2 border-basque-red overflow-hidden relative">
+                <div class="absolute top-0 right-0 bg-basque-red text-white px-3 py-1 text-xs font-bold rounded-bl-lg">SPAIN</div>
+                <div class="p-6 pt-10 space-y-6">
+                    <div>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-church text-gray-500 mr-2"></i> Atari Gastroteka (San Sebastián)</h4>
+                        <p class="text-sm text-gray-600 mt-1"><strong>【識女仔必去】</strong> 買完酒坐喺大教堂樓梯飲，成條街都係年輕男女，氣氛極好搭訕。</p>
+                    </div>
+                    <hr class="border-gray-100">
+                    <div>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-drumstick-bite text-orange-500 mr-2"></i> 蘋果酒莊 Petritegi (San Sebastián 近郊)</h4>
+                        <p class="text-sm text-gray-600 mt-1"><strong>【男人浪漫】</strong> 畀 €40 任飲大木桶噴出嚟嘅蘋果酒，配超級巨型炭烤牛扒，3個兄弟去最夾！</p>
+                    </div>
+                    <hr class="border-gray-100">
+                    <div>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-utensils text-yellow-500 mr-2"></i> Bar Sport (San Sebastián)</h4>
+                        <p class="text-sm text-gray-600 mt-1"><strong>【必食 Pintxos】</strong> 氣氛嘈吵熱鬧。入去大叫兩件海膽 (Erizo de mar) 同蟹肉撻！</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- France Section -->
+            <div class="bg-white rounded-2xl shadow-lg border-2 border-french-blue overflow-hidden relative">
+                <div class="absolute top-0 right-0 bg-french-blue text-white px-3 py-1 text-xs font-bold rounded-bl-lg">FRANCE</div>
+                <div class="p-6 pt-10 space-y-6">
+                    <div>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-water text-blue-400 mr-2"></i> Etxola Bibi (Biarritz)</h4>
+                        <p class="text-sm text-gray-600 mt-1"><strong>【日落 Chill 爆】</strong> 喺 Côte des Basques 崖邊嘅半露天酒吧。望住成個海灘同滑浪客，全場都係打扮隨性嘅法國靚仔靚女，買杯啤酒望海發呆。</p>
+                    </div>
+                    <hr class="border-gray-100">
+                    <div>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-fish text-gray-400 mr-2"></i> Les Halles 街市 (Biarritz)</h4>
+                        <p class="text-sm text-gray-600 mt-1"><strong>【法式日生活】</strong> 中午去街市外圍，極多法國人企喺街食生蠔 (Huîtres) 配冰凍白酒，體驗極地道法式慵懶。</p>
+                    </div>
+                    <hr class="border-gray-100">
+                    <div>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-glass-cheers text-purple-500 mr-2"></i> Port des Pêcheurs (Biarritz)</h4>
+                        <p class="text-sm text-gray-600 mt-1"><strong>【隱世漁港晚餐】</strong> 舊漁港改建嘅小餐廳區，喺海邊食新鮮海鮮，晚上氣氛浪漫又 Relax。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logistics & Tips Section -->
+    <section id="tips" class="py-16 md:py-24 bg-gray-100 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-center mb-12">跨國生存手冊 <span class="text-basque-red">.</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Transport -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2"><i class="fas fa-bus text-blue-500 mr-2"></i> 跨國交通極簡單</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li><strong>過境免查：</strong> 兩國都係神根區，搭大巴直接過境，唔使查 Passport，感覺似搭緊普通城巴。</li>
+                        <li><strong>跨國巴士：</strong> 買 <strong>ALSA</strong> 或 <strong>FlixBus</strong>。San Sebastián 去 Biarritz 車程大約 45 分鐘至 1 小時，車費約 €5-€10，平到笑。</li>
+                        <li><strong>長途回程：</strong> Biarritz 直接搭巴士返 Bilbao，大約 2 - 2.5 小時。</li>
+                    </ul>
+                </div>
+
+                <!-- Culture & Budget -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2"><i class="fas fa-euro-sign text-yellow-500 mr-2"></i> 消費與潛規則</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li><strong>語言：</strong> 兩邊英文都未必極流利。西班牙邊講 Hola/Gracias；法國邊記住講 Bonjour/Merci，法國人聽到你講法文會 Nice 好多！</li>
+                        <li><strong>貨幣：</strong> 兩邊都係用歐羅 (Euro)，一張信用卡走天涯。</li>
+                        <li><strong>物價：</strong> 法國 Biarritz 會比西班牙貴少少 (大約貴15-20%)，所以喺西班牙可以豪食，去到法國就 Relax 飲酒食生蠔。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-basque-dark text-gray-400 py-8 text-center font-sm">
+        <p>為 3 位兄弟度身訂造。法西跨國，Chill 住飲！🍻</p>
+        <p class="mt-2 text-xs">Pintxos 🇪🇸 • Oysters 🇫🇷 • Surfing 🏄‍♂️</p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-transparent', 'glass-card');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
+
+```
