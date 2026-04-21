@@ -1,0 +1,350 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-HK" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>巴斯克兄弟 7日 Chill 爆之旅 | Basque Country</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans HK"', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        basque: {
+                            red: '#E10019',
+                            green: '#009B48',
+                            dark: '#1A1A1A',
+                            light: '#F8F9FA'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A1A1A; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E10019; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b30014; 
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(26, 26, 26, 0.6), rgba(26, 26, 26, 0.9)), url('https://images.unsplash.com/photo-1558642084-fd07fae5282e?q=80&w=2071&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-basque-light text-gray-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-card shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-heading text-2xl font-bold tracking-wider text-basque-dark">BASQUE<span class="text-basque-red">.</span>TRIP</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#vibe" class="text-gray-800 hover:text-basque-red font-semibold transition">Vibe Check</a>
+                    <a href="#itinerary" class="text-gray-800 hover:text-basque-red font-semibold transition">行程路線</a>
+                    <a href="#nightlife" class="text-gray-800 hover:text-basque-red font-semibold transition">搵食蒲點</a>
+                    <a href="#tips" class="text-gray-800 hover:text-basque-red font-semibold transition">生存手冊</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-800 hover:text-basque-red focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#vibe" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">Vibe Check</a>
+                <a href="#itinerary" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">行程路線</a>
+                <a href="#nightlife" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">搵食蒲點</a>
+                <a href="#tips" class="block px-3 py-2 text-gray-800 font-semibold hover:bg-gray-100 rounded-md">生存手冊</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-screen flex flex-col justify-center items-center text-center px-4 relative pt-16">
+        <div class="animate-fade-in-up">
+            <span class="text-basque-red font-bold tracking-widest uppercase mb-2 block text-sm md:text-base">May Edition • 3 Bros</span>
+            <h1 class="text-5xl md:text-7xl font-heading text-white font-bold mb-4 drop-shadow-lg">
+                BASQUE COUNTRY <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-basque-red">CHILL 爆之旅</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8 font-light">
+                7日6夜。平民價錢。頂級小食、微醺白酒、滑浪靚女。體驗最Local嘅西班牙北部風情。
+            </p>
+            <a href="#itinerary" class="inline-block bg-basque-red hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 shadow-lg">
+                開始探索 <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+        
+        <!-- Wave Divider -->
+        <div class="absolute bottom-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-12 md:h-24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.2,190.61,110.8,235.14,104.53,280.4,88.33,321.39,56.44Z" fill="#F8F9FA"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Vibe Check Section -->
+    <section id="vibe" class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-basque-dark mb-4">THE VIBE CHECK <span class="text-basque-red">.</span></h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">五月份出發天氣完美（約15-22度），避開暑假人潮，啱啱好有陽光微風。呢個Trip嘅重點係：唔使去高級餐廳，一切從簡，貼地享受。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 text-center group">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-basque-red transition">
+                    <i class="fas fa-utensils text-2xl text-basque-red group-hover:text-white transition"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">企街食 Pintxos</h3>
+                <p class="text-gray-600 text-sm">拒絕遊客餐廳！每間吧叫一件小食配一杯酒，由街頭食到街尾，平靚正，最易識朋友。</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 text-center group">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-500 transition">
+                    <i class="fas fa-water text-2xl text-blue-500 group-hover:text-white transition"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">陽光、沙灘、滑浪</h3>
+                <p class="text-gray-600 text-sm">歐洲頂級海岸線，充滿活力嘅滑浪客同後生仔女。買幾罐啤酒坐石壆睇日落，男人浪漫。</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border border-gray-100 text-center group">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-basque-green transition">
+                    <i class="fas fa-glass-cheers text-2xl text-basque-green group-hover:text-white transition"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">豪邁夜生活</h3>
+                <p class="text-gray-600 text-sm">夜晚10點後先係戲肉。去蘋果酒莊任飲噴泉 Cider，去教堂樓梯底同 Local 一齊吹水狂歡。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Section -->
+    <section id="itinerary" class="py-16 md:py-24 bg-basque-dark text-white px-4 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">7日路線圖 <span class="text-basque-red">.</span></h2>
+                <p class="text-gray-400">Bilbao ✈️ San Sebastián 🚆 Zarautz ✈️ 回程</p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="space-y-8">
+                <!-- Day 1-2 -->
+                <div class="bg-gray-800 rounded-2xl overflow-hidden flex flex-col md:flex-row hover:ring-2 ring-basque-red transition duration-300">
+                    <div class="md:w-1/3 bg-cover bg-center h-48 md:h-auto" style="background-image: url('https://images.unsplash.com/photo-1542841791-383792c3a593?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="p-6 md:p-8 md:w-2/3">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-basque-red font-bold tracking-wider">Day 1 - Day 2</span>
+                            <span class="bg-gray-700 text-xs py-1 px-3 rounded-full"><i class="fas fa-building mr-1"></i> Bilbao 畢爾包</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">熱身派對：舊城區與河畔日落</h3>
+                        <p class="text-gray-300 text-sm mb-4">
+                            落機直踩 Casco Viejo (舊城區)。第一晚喺 Plaza Nueva 進行第一回 Pintxos Crawl。第二日下晝去 Muelle Marzana 河畔買杯啤酒，同當地文青/後生仔女坐石壆睇日落，極度 Relax。
+                        </p>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li><i class="fas fa-check text-basque-green mr-2"></i> 住宿建議：Casco Viejo 區內 Airbnb/Hostel</li>
+                            <li><i class="fas fa-check text-basque-green mr-2"></i> 必去：Guggenheim 美術館外圍打卡</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 3-5 -->
+                <div class="bg-gray-800 rounded-2xl overflow-hidden flex flex-col md:flex-row-reverse hover:ring-2 ring-blue-500 transition duration-300">
+                    <div class="md:w-1/3 bg-cover bg-center h-48 md:h-auto" style="background-image: url('https://images.unsplash.com/photo-1517618933560-606016149453?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="p-6 md:p-8 md:w-2/3">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-blue-400 font-bold tracking-wider">Day 3 - Day 5</span>
+                            <span class="bg-gray-700 text-xs py-1 px-3 rounded-full"><i class="fas fa-umbrella-beach mr-1"></i> San Sebastián 聖塞巴斯提安</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">重頭戲：海灘、美食與狂歡</h3>
+                        <p class="text-gray-300 text-sm mb-4">
+                            搭巴士轉場。直衝 Zurriola 沙灘睇人滑浪 (兼睇靚女)。晏晝喺沙灘酒吧飲嘢。夜晚深入 Parte Vieja 舊城區，挑戰全世界最密集嘅酒吧街。Day 5 預約去蘋果酒莊大啖食炭烤牛扒！
+                        </p>
+                        <ul class="text-sm text-gray-400 space-y-1">
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i> 住宿建議：Gros 區 (充滿年輕滑浪客，物價較平)</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i> 必去：Atari 酒吧門口教堂樓梯底 (識女仔勝地)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Day 6 -->
+                <div class="bg-gray-800 rounded-2xl overflow-hidden flex flex-col md:flex-row hover:ring-2 ring-yellow-400 transition duration-300">
+                    <div class="md:w-1/3 bg-cover bg-center h-48 md:h-auto" style="background-image: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=2070&auto=format&fit=crop');"></div>
+                    <div class="p-6 md:p-8 md:w-2/3">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-yellow-400 font-bold tracking-wider">Day 6</span>
+                            <span class="bg-gray-700 text-xs py-1 px-3 rounded-full"><i class="fas fa-water mr-1"></i> Zarautz 薩勞特斯</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">青春滑浪小鎮放空</h3>
+                        <p class="text-gray-300 text-sm mb-4">
+                            搭 40 分鐘火車去附近嘅 Zarautz 小鎮。呢度有超長沙灘同無數 Surf Camp，成個鎮都係後生女仔同陽光男孩。租張沙灘椅攤屍，黃昏去海濱長廊嘅露天酒吧飲 Sangria。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Day 7 -->
+                <div class="bg-gray-800 rounded-2xl p-6 text-center border border-gray-700">
+                    <span class="text-gray-400 font-bold tracking-wider block mb-2">Day 7</span>
+                    <h3 class="text-xl font-bold mb-2">嘆埋杯靚啡，回程！</h3>
+                    <p class="text-gray-400 text-sm">喺 San Sebastián 食個早餐，搭 DO50B 直通巴士直達 Bilbao 機場 (約 1.5 小時)，準備返香港。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Black Book (Food & Nightlife) -->
+    <section id="nightlife" class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-basque-dark mb-2">男人的浪漫黑皮書 <i class="fas fa-book-open text-basque-red ml-2"></i></h2>
+                <p class="text-gray-600">食好西、飲平酒、識朋友嘅具體名單。</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- San Sebastian Card -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                <div class="bg-blue-900 text-white p-4 flex justify-between items-center">
+                    <h3 class="font-bold text-lg">San Sebastián 舊城區必食</h3>
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="p-6 space-y-6">
+                    <div>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-star text-yellow-400 mr-2"></i> Bar Sport</h4>
+                        <p class="text-sm text-gray-600 mt-1">氣氛極度熱鬧，店員超 Nice。入去大叫兩件海膽 (Erizo de mar) 同蟹肉撻！</p>
+                    </div>
+                    <hr class="border-gray-100">
+                    <div>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-fire text-orange-500 mr-2"></i> Borda Berri</h4>
+                        <p class="text-sm text-gray-600 mt-1">吧枱冇嘢擺出嚟，全部即叫即煮。紅酒燉牛面頰 (Carrillera) 必食，入口即溶。</p>
+                    </div>
+                    <hr class="border-gray-100">
+                    <div>
+                        <h4 class="font-bold text-basque-dark flex items-center"><i class="fas fa-glass-martini-alt text-pink-500 mr-2"></i> Atari Gastroteka (識女仔熱點)</h4>
+                        <p class="text-sm text-gray-600 mt-1">喺正大教堂門口。買完酒坐晒喺教堂樓梯度飲，成街都係後生仔女，極度容易搭訕傾計。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Experience Card -->
+            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+                <div class="bg-basque-dark text-white p-4 flex justify-between items-center">
+                    <h3 class="font-bold text-lg">極致體驗：蘋果酒莊 (Sagardotegi)</h3>
+                    <i class="fas fa-beer"></i>
+                </div>
+                <div class="p-6">
+                    <img src="https://images.unsplash.com/photo-1544025162-8111142154ea?q=80&w=2069&auto=format&fit=crop" alt="Steak" class="w-full h-40 object-cover rounded-xl mb-4">
+                    <p class="text-gray-600 text-sm mb-4">去附近小鎮 Astigarraga (15分鐘巴士)。推介酒莊：<strong class="text-basque-dark">Petritegi</strong> 或 <strong class="text-basque-dark">Zapiain</strong> (需網上預約)。</p>
+                    <ul class="text-sm text-gray-600 space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-basque-green mt-1 mr-2"></i>
+                            <span><strong>玩法：</strong> 約 €40-50 位，包任飲蘋果酒。莊主開大木桶，你要自己拎杯去接噴出嚟嘅酒柱！</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-basque-green mt-1 mr-2"></i>
+                            <span><strong>食咩：</strong> 超巨型炭烤巴斯克牛扒 (Txuleton)、鱈魚奄列。大口食肉大口飲酒，3個男人去最夾！</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logistics & Tips Section -->
+    <section id="tips" class="py-16 md:py-24 bg-gray-100 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-center mb-12">實用生存手冊 <span class="text-basque-red">.</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Transport -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2"><i class="fas fa-bus text-blue-500 mr-2"></i> 交通攻略 (平靚正)</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li><strong>機場入市區：</strong> Bilbao機場搭 Bizkaibus (A3247)，20分鐘直達，車費約 €3。</li>
+                        <li><strong>城市移動：</strong> Bilbao 去 San Sebastián 搭 ALSA 或 Lurraldebus 旅遊巴，約 1.25 小時，€7-€10。</li>
+                        <li><strong>去沙灘小鎮：</strong> 搭 Euskotren (巴斯克窄軌火車) 去 Zarautz，沿途海景一流。</li>
+                    </ul>
+                </div>
+
+                <!-- Culture & Budget -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i> 當地潛規則</h3>
+                    <ul class="space-y-3 text-sm text-gray-700">
+                        <li><strong>點樣食平啲：</strong> 去酒吧企喺度食！每件 Pintxos €2-€4，酒 €2-€3。一晚食4間，每人 €30 飽到上心口。</li>
+                        <li><strong>作息時間：</strong> 西班牙人晏食飯。晚餐 9PM 先開始，夜晚 10 點後落酒吧區先會見到最熱鬧嘅人群。</li>
+                        <li><strong>飲酒必叫：</strong> Txakoli (巴斯克特產微氣泡白酒)、Zurito (細杯裝生啤)、Cider。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-basque-dark text-gray-400 py-8 text-center font-sm">
+        <p>為 3 位兄弟度身訂造。祝旅途愉快，Chill 住飲！🍻</p>
+        <p class="mt-2 text-xs">Vibe Check • Pintxos • Surfing</p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Navbar styling on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.replace('bg-transparent', 'glass-card');
+            } else {
+                nav.classList.remove('shadow-md');
+                // Keep glass-card for better visibility or make transparent based on preference
+            }
+        });
+    </script>
+</body>
+</html>
+
+```
