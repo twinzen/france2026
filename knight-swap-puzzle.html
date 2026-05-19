@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight Swap Puzzle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Exact layout structure */
+        .board-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+            margin: 0 auto;
+            padding: 4px;
+        }
+
+        .board-row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* * By using negative bottom/right margins, we perfectly collapse 
+         * the 1px black borders between adjacent squares. 
+         */
+        .cell {
+            position: relative;
+            width: 72px;
+            height: 72px;
+            border: 1px solid #111827; /* Dark black/gray border */
+            margin-bottom: -1px;
+            margin-right: -1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
+            transition: background-color 0.2s;
+        }
+
+        @media (max-width: 400px) {
+            .cell {
+                width: 64px;
+                height: 64px;
+            }
+        }
+
+        /* Textbook Pink Colors */
+        .cell.dark { background-color: #d25b80; } 
+        .cell.light { background-color: #f3b1c6; } 
+
+        .cell.selected {
+            background-color: #fde047; /* Yellow highlight */
+            z-index: 10;
+        }
+
+        /* Valid move green dot */
+        .cell.valid-move::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            border: 2px solid #166534;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            transition: transform 0.1s ease;
+            z-index: 2;
+        }
+
+        .cell.valid-move:hover::after {
+            transform: scale(1.2);
+        }
+
+        .knight {
+            font-size: 3rem;
+            filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.5));
+            transition: transform 0.15s ease-out;
+            z-index: 5;
+        }
+
+        @media (max-width: 400px) {
+            .knight { font-size: 2.5rem; }
+        }
+
+        .cell:active .knight {
+            transform: scale(0.85);
+        }
+
+        /* White knight with outline, Black knight solid */
+        .knight-w {
+            color: #f8fafc;
+            -webkit-text-stroke: 2px #0f172a;
+        }
+        .knight-b {
+            color: #1e293b;
+            -webkit-text-stroke: 1px #000000;
+        }
+
+        .win-bounce {
+            animation: bounce 1s ease-in-out infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex flex-col items-center py-8 px-4 font-sans text-slate-800">
+
+    <div class="max-w-md w-full flex flex-col items-center">
+        <h1 class="text-3xl font-extrabold text-slate-800 mb-2 text-center">Knight Swap Puzzle</h1>
+        <p class="text-slate-600 mb-6 text-center text-sm md:text-base px-2">
+            Swap the positions of the White and Black knights. Knights move in their standard 'L' shape.
+        </p>
+
+        <div class="flex justify-between w-full px-2 mb-6 items-center max-w-[340px]">
+            <div class="text-lg font-bold bg-white px-3 py-2 rounded-xl shadow-sm border border-slate-200">
+                Moves: <span id="moveCount" class="text-pink-600">0</span>
+            </div>
+            <div class="flex gap-2">
+                <button id="undoBtn" class="bg-slate-600 hover:bg-slate-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium py-2 px-3 rounded-xl shadow transition-colors flex items-center gap-1.5" disabled>
+                    <i class="fa-solid fa-rotate-left"></i> Undo
+                </button>
+                <button id="resetBtn" class="bg-slate-800 hover:bg-slate-700 text-white font-medium py-2 px-3 rounded-xl shadow transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-rotate-right"></i> Reset
+                </button>
+            </div>
+        </div>
+
+        <!-- The exact 10-square layout -->
+        <div id="board" class="board-container mb-8"></div>
+
+        <!-- Victory Banner -->
+        <div id="winMessage" class="hidden flex-col items-center bg-green-50 border-2 border-green-500 rounded-2xl p-6 shadow-md w-full max-w-[340px] transition-all">
+            <h2 class="text-2xl font-bold text-green-700 mb-2 win-bounce flex items-center gap-2">
+                <i class="fa-solid fa-trophy text-yellow-500"></i> Puzzle Solved!
+            </h2>
+            <p id="winText" class="text-green-800 font-medium text-center text-lg"></p>
+        </div>
+    </div>
+
+    <script>
+        // Exact 10 squares requested: [Row index, Array of column indices for that row]
+        const rowLayout = [
+            [0],             // Row 0: 1 square
+            [0, 1, 2, 3],    // Row 1: 4 squares
+            [0, 1, 2],       // Row 2: 3 squares
+            [0, 1]           // Row 3: 2 squares
+        ];
+
+        // Flat array of valid coordinates for move validation
+        const validSquares = rowLayout.flatMap((cols, r) => cols.map(c => `${r},${c}`));
+
+        // Starting positions
+        const initialState = {
+            '0,0': 'w', // White A
+            '2,2': 'w', // White B
+            '2,0': 'b', // Black 1
+            '1,3': 'b'  // Black 2
+        };
+
+        // Hand-drawn labels from the image
+        const labels = {
+            '0,0': 'A',
+            '2,2': 'B',
+            '2,0': '1',
+            '1,3': '2'
+        };
+
+        let state = {};
+        let history = []; // Array to store previous states
+        let selectedSquare = null;
+        let moves = 0;
+        let validMoves = [];
+        let isWon = false;
+
+        const boardEl = document.getElementById('board');
+        const moveCountEl = document.getElementById('moveCount');
+        const winMessageEl = document.getElementById('winMessage');
+        const winTextEl = document.getElementById('winText');
+        const resetBtn = document.getElementById('resetBtn');
+        const undoBtn = document.getElementById('undoBtn');
+
+        function init() {
+            state = { ...initialState };
+            history = [];
+            selectedSquare = null;
+            moves = 0;
+            validMoves = [];
+            isWon = false;
+            
+            winMessageEl.classList.add('hidden');
+            winMessageEl.classList.remove('flex');
+            
+            updateUI();
+        }
+
+        // Calculate 'L' moves standard to chess
+        function getValidKnightMoves(r, c) {
+            const possibleMoves = [];
+            const offsets = [
+                [-2, -1], [-2, 1], [-1, -2], [-1, 2],
+                [1, -2], [1, 2], [2, -1], [2, 1]
+            ];
+
+            for (const [dr, dc] of offsets) {
+                const nr = r + dr;
+                const nc = c + dc;
+                const pos = `${nr},${nc}`;
+
+                // Must be within our 10-square layout AND currently empty
+                if (validSquares.includes(pos) && !state[pos]) {
+                    possibleMoves.push(pos);
+                }
+            }
+            return possibleMoves;
+        }
+
+        function handleClick(r, c) {
+            if (isWon) return; 
+
+            const pos = `${r},${c}`;
+
+            // 1. Moving the selected piece to a valid empty square
+            if (selectedSquare && validMoves.includes(pos)) {
+                // Save current state to history before changing it
+                history.push({ ...state });
+
+                state[pos] = state[selectedSquare];
+                delete state[selectedSquare];
+                moves++;
+                selectedSquare = null;
+                validMoves = [];
+
+                checkWin();
+                updateUI();
+                return;
+            }
+
+            // 2. Clicking a square that has a piece on it
+            if (state[pos]) {
+                if (selectedSquare === pos) {
+                    // Deselect if already selected
+                    selectedSquare = null;
+                    validMoves = [];
+                } else {
+                    // Select it and calculate valid destinations
+                    selectedSquare = pos;
+                    validMoves = getValidKnightMoves(r, c);
+                }
+                updateUI();
+                return;
+            }
+
+            // 3. Clicking anywhere else just clears selection
+            selectedSquare = null;
+            validMoves = [];
+            updateUI();
+        }
+
+        function undoMove() {
+            if (history.length === 0) return;
+
+            // Revert state to the last step
+            state = history.pop();
+            moves--;
+            
+            // Clear selections and reset win state in case we are undoing from a win
+            selectedSquare = null;
+            validMoves = [];
+            isWon = false;
+            winMessageEl.classList.add('hidden');
+            winMessageEl.classList.remove('flex');
+
+            updateUI();
+        }
+
+        function checkWin() {
+            // Victory: The starting black squares now hold white pieces, and vice versa.
+            if (
+                state['2,0'] === 'w' &&
+                state['1,3'] === 'w' &&
+                state['0,0'] === 'b' &&
+                state['2,2'] === 'b'
+            ) {
+                isWon = true;
+                winMessageEl.classList.remove('hidden');
+                winMessageEl.classList.add('flex');
+                winTextEl.innerText = `You completed the swap in ${moves} moves!`;
+            }
+        }
+
+        // Generate the strict 10-square layout
+        function updateUI() {
+            moveCountEl.innerText = moves;
+            boardEl.innerHTML = '';
+
+            // Update Undo button state
+            undoBtn.disabled = history.length === 0;
+
+            // Render strictly row by row based on our rowLayout config
+            rowLayout.forEach((cols, r) => {
+                const rowEl = document.createElement('div');
+                rowEl.className = 'board-row';
+
+                cols.forEach(c => {
+                    const pos = `${r},${c}`;
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+
+                    // Alternate colors to match picture
+                    if ((r + c) % 2 === 0) {
+                        cell.classList.add('dark');
+                    } else {
+                        cell.classList.add('light');
+                    }
+
+                    // Selection and move highlighting
+                    if (pos === selectedSquare) cell.classList.add('selected');
+                    if (validMoves.includes(pos)) cell.classList.add('valid-move');
+
+                    // Pencil labels (A, B, 1, 2)
+                    if (labels[pos]) {
+                        const labelEl = document.createElement('div');
+                        labelEl.className = 'absolute top-1 right-1.5 text-xs font-bold opacity-40 text-slate-900 z-0 pointer-events-none font-serif';
+                        labelEl.innerText = labels[pos];
+                        cell.appendChild(labelEl);
+                    }
+
+                    // Knight icon
+                    if (state[pos]) {
+                        const icon = document.createElement('i');
+                        icon.className = `fa-solid fa-chess-knight knight knight-${state[pos]}`;
+                        cell.appendChild(icon);
+                    }
+
+                    cell.addEventListener('click', () => handleClick(r, c));
+                    rowEl.appendChild(cell);
+                });
+
+                boardEl.appendChild(rowEl);
+            });
+        }
+
+        resetBtn.addEventListener('click', init);
+        undoBtn.addEventListener('click', undoMove);
+
+        init();
+    </script>
+</body>
+</html>
