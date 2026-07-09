@@ -21,7 +21,6 @@
         }
     </script>
     <style>
-        /* 隱藏捲軸但保留捲動功能 (為手機版 Tab 導航而設) */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -76,8 +75,6 @@
             </div>
         </div>
 
-        <!-- 內容區域 -->
-        
         <!-- 首頁總覽 -->
         <div id="overview" class="tab-content block animate-fade-in">
             <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
@@ -128,22 +125,11 @@
             <div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-r-xl shadow-sm p-6 mb-6">
                 <h2 class="text-xl font-bold mb-2 text-yellow-800"><i class="fas fa-ticket-alt mr-2"></i>交通必讀：拜仁邦票 (Bayern-Ticket) 攻略</h2>
                 <ul class="list-disc list-inside text-gray-700 space-y-2">
-                    <li><strong>適用日子：</strong><span class="font-bold text-red-600">Day 2 (海倫基姆湖) 專用。</span></li>
+                    <li><strong>適用日子：</strong><span class="font-bold text-red-600">Day 2 (海倫基姆湖) 及 Day 3 (薩爾斯堡) 專用。</span></li>
                     <li><strong>參考票價 (2等座)：</strong><span class="text-blue-700 font-semibold">1人 €34 | 2人 €44 | 3人 €54 | 4人 €64 | 5人 €74</span> (即第1位 €34，其後每位加 €10)。</li>
-                    <li><strong>買法：</strong>買 <strong>1張5人票 (€74) + 1張1人票 (€34)</strong> (覆蓋6位成人，全日交通費總共 €108)。</li>
+                    <li><strong>買法：</strong>買 <strong>1張5人票 (€74) + 1張1人票 (€34)</strong> (覆蓋6位成人，每日交通費總共 €108)。</li>
                     <li><strong>兒童免費：</strong>14歲或以下兒童由父母/祖父母陪同可免費乘搭區域火車！</li>
                     <li><strong>時間限制：</strong>星期一至五，必須在<strong>早上 9:00 後</strong>才可上車使用。</li>
-                </ul>
-            </div>
-
-            <div class="bg-indigo-50 border-l-4 border-indigo-500 rounded-r-xl shadow-sm p-6 mb-6">
-                <h2 class="text-xl font-bold mb-2 text-indigo-800"><i class="fas fa-train mr-2"></i>Day 3 專用：特價團體高鐵票 (Super Sparpreis Gruppe) 攻略</h2>
-                <p class="text-sm text-indigo-700 mb-3 font-semibold">帶長者及小朋友輕鬆跨國！包埋劃位，保證 8 個人有得坐，一站直達極舒服。</p>
-                <ul class="list-disc list-inside text-gray-700 space-y-2">
-                    <li><strong>去程班次：</strong>08:03 搭乘 ICE 高鐵，一站直達薩爾斯堡。</li>
-                    <li><strong>回程班次：</strong>19:00 搭乘 RJX 66 (Railjet Xpress)，一站直達慕尼黑。</li>
-                    <li><strong>最大優勢：</strong>打破邦票 9:00am 限制，可提早出發；長途高鐵座位寬敞，免卻區域火車搵位煩惱。</li>
-                    <li><strong>注意事項：</strong>此票種必須提早於 DB 官網預訂，且<strong class="text-red-600">只限乘坐票面上指定的班次 (Train-specific)</strong>，絕不能錯過班次！</li>
                 </ul>
             </div>
 
@@ -164,33 +150,25 @@
             <div class="bg-white rounded-xl shadow-sm p-6 relative">
                 <h2 class="text-2xl font-bold mb-6 text-bavaria-blue"><i class="fas fa-calendar-day mr-2"></i>Day 1: 7月26日 (星期日) - 抵達與市內漫步</h2>
                 
+                <!-- Day 1 專屬圖片 -->
+                <div class="mb-6 rounded-lg overflow-hidden shadow-sm border border-gray-200 aspect-video bg-gray-50">
+                    <img src="munich.png" alt="[attachment_0](attachment)" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/1920x1080/e2e8f0/64748b?text=Map+of+Munich'">
+                </div>
+                
                 <div class="relative pl-10 space-y-8">
                     <div class="timeline-line"></div>
                     
-                    <!-- 行程點 -->
                     <div class="relative z-10">
                         <div class="absolute -left-12 bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-plane-arrival"></i></div>
                         <h3 class="text-xl font-bold text-gray-800">中午：抵達慕尼黑</h3>
-                        <p class="text-gray-600 mt-1">從倫敦希思路機場 (LHR T2, 09:00起飛) 飛抵<a href="https://maps.google.com/?q=Munich+Airport+Terminal+2" target="_blank" class="text-bavaria-blue hover:underline font-medium"><i class="fas fa-map-marker-alt"></i> 慕尼黑機場 (MUC T2)</a>，11:50抵達。過關後乘搭 S-Bahn (S1 或 S8 線) 直達慕尼黑火車總站 (車程約 40-45 分鐘)。</p>
+                        <p class="text-gray-600 mt-1">從倫敦希思路機場 (LHR T2, 09:00起飛) 飛抵<a href="https://maps.google.com/?q=Munich+Airport+Terminal+2" target="_blank" class="text-bavaria-blue hover:underline font-medium"><i class="fas fa-map-marker-alt"></i> 慕尼黑機場 (MUC T2)</a>，11:50抵達。過關後乘搭 S-Bahn (S1/S8) 直達慕尼黑火車總站，步行至 <a href="https://maps.google.com/?q=Hotel+NH+Collection+München+Bavaria" target="_blank" class="text-bavaria-blue hover:underline font-bold"><i class="fas fa-map-marker-alt"></i> Hotel NH Collection München Bavaria</a> Check-in 及安頓行李。</p>
                         
-                        <div class="mt-3 bg-blue-50 p-4 rounded-lg border border-blue-100 text-sm text-gray-700 shadow-sm mb-3">
-                            <p class="font-bold text-bavaria-blue mb-1"><i class="fas fa-ticket-alt mr-1"></i> 機場出市區交通票攻略：Airport-City-Day-Ticket (Group)</p>
-                            <p class="mb-2">慕尼黑機場有專為遊客而設嘅「機場城市日票 (團體)」，一張票可以俾最多 5 位成人使用 (6-14歲小童兩個當一個大人計)。</p>
-                            <ul class="list-disc list-inside space-y-1 ml-1 text-gray-600">
-                                <li><strong>人數計算：</strong> 6位大人 + 2位小童(當1個大人) = 7 位成人配額。</li>
-                                <li><strong>買法：</strong> 喺機場售票機買 <strong class="text-red-600">2 張 Airport-City-Day-Ticket (Group)</strong>。</li>
-                                <li><strong>最新價錢：</strong> 每張 <strong class="text-blue-600">€32.60</strong>，兩張合共 <strong>€65.20</strong>。</li>
-                                <li><strong>極大優勢：</strong> 呢張飛係「日票」，包埋機場出市區嘅 S-Bahn 之餘，<strong>Day 1 全日喺慕尼黑市區搭地鐵 (U-Bahn)、巴士、電車都係免費無限任搭！</strong></li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm text-gray-700">
+                        <div class="mt-3 bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm text-gray-700">
                             <p class="mb-1"><strong><i class="far fa-clock text-blue-500 mr-1"></i> 預計到達酒店：</strong>約 13:45</p>
-                            <p><strong><i class="far fa-clock text-blue-500 mr-1"></i> Check-in 及安頓：</strong>約 13:45 - 15:00 步行至 <a href="https://maps.google.com/?q=Hotel+NH+Collection+München+Bavaria" target="_blank" class="text-bavaria-blue hover:underline font-bold"><i class="fas fa-map-marker-alt"></i> Hotel NH Collection München Bavaria</a>。<br><span class="text-gray-500 ml-5">(提示：如房間仍未準備好，可先在櫃檯寄存行李，稍作梳洗休息)</span></p>
+                            <p><strong><i class="far fa-clock text-blue-500 mr-1"></i> Check-in 及安頓：</strong>約 13:45 - 15:00 <br><span class="text-gray-500 ml-5">(提示：如房間仍未準備好，可先在櫃檯寄存行李，稍作梳洗休息)</span></p>
                         </div>
                     </div>
 
-                    <!-- 行程點 -->
                     <div class="relative z-10">
                         <div class="absolute -left-12 bg-green-100 text-green-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-camera"></i></div>
                         <h3 class="text-xl font-bold text-gray-800">下午：慕尼黑舊城區觀光</h3>
@@ -200,39 +178,32 @@
                             <p><strong><i class="fas fa-walking text-green-500 mr-1"></i> 步行時間：</strong>由酒店出發，沿著熱鬧的行人專用區步行，沿途將會參觀以下多個歷史地標。</p>
                         </div>
 
-                        <!-- 舊城區景點列表 -->
                         <div class="mt-4 space-y-4">
-                            <!-- 卡爾門 -->
                             <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-bavaria-blue mb-1"><i class="fas fa-archway mr-2"></i><a href="https://maps.google.com/?q=Karlstor,+Munich" target="_blank" class="hover:underline">卡爾門 (Karlstor)</a></h4>
                                 <p class="text-sm text-gray-700">建於 14 世紀，係慕尼黑舊城牆殘存落嚟嘅三個城門之一。由酒店行過來，穿過呢個雄偉嘅拱門就正式進入舊城區最熱鬧嘅步行街 (Kaufingerstraße)。</p>
                             </div>
                             
-                            <!-- 聖母主教座堂 -->
                             <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-bavaria-blue mb-1"><i class="fas fa-church mr-2"></i><a href="https://maps.google.com/?q=Frauenkirche,+Munich" target="_blank" class="hover:underline">聖母主教座堂 (Frauenkirche)</a> & <a href="https://maps.google.com/?q=Wasserglockenbrunnen,+Munich" target="_blank" class="hover:underline">水鐘噴泉 (Wasserglockenbrunnen)</a></h4>
                                 <p class="text-sm text-gray-700">慕尼黑無人不曉嘅標誌性地標，兩座綠色洋蔥頭雙塔非常搶眼。教堂內部有一塊著名嘅「魔鬼腳印 (Teufelstritt)」，可以同小朋友講下魔鬼同建築師鬥智嘅傳說。教堂對出就係造型獨特、好似漏斗咁嘅水鐘噴泉。<br><span class="text-blue-600 font-semibold mt-1 inline-block">(教堂入場免費)</span></p>
                             </div>
 
-                            <!-- 瑪利亞廣場及鐘樓 -->
                             <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-bavaria-blue mb-1"><i class="fas fa-map-marker-alt mr-2"></i><a href="https://maps.google.com/?q=Marienplatz,+Munich" target="_blank" class="hover:underline">瑪利亞廣場 (Marienplatz)</a> & <a href="https://maps.google.com/?q=Rathaus-Glockenspiel,+Munich" target="_blank" class="hover:underline">鐘樓報時 (Glockenspiel)</a></h4>
                                 <p class="text-sm text-gray-700">慕尼黑嘅心臟地帶！新市政廳 (Neues Rathaus) 建築極之華麗。最受歡迎嘅係鐘樓每天下午 5 點（及早上11點、12點）的機械木偶表演，與真人等高的木偶會跟隨音樂轉動，重現 16 世紀大婚及桶匠之舞的歷史場景。</p>
                             </div>
 
-                            <!-- 聖伯多祿大教堂 -->
                             <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-bavaria-blue mb-1"><i class="fas fa-place-of-worship mr-2"></i><a href="https://maps.google.com/?q=St.+Peter's+Church,+Munich" target="_blank" class="hover:underline">聖伯多祿大教堂 (St. Peter's Church / Alter Peter)</a></h4>
                                 <p class="text-sm text-gray-700">當地人稱呼佢為「老彼得」，係慕尼黑最古老嘅堂區教堂。如果大人同小朋友體力許可，可以行大約 300 級狹窄嘅樓梯上塔頂，嗰度擁有 360 度無死角俯瞰成個瑪利亞廣場同聖母教堂雙塔嘅最靚打卡位！<br><span class="text-blue-600 font-semibold mt-1 inline-block">(教堂入場免費，登塔門票：成人約 €5，小童約 €2)</span></p>
                             </div>
 
-                            <!-- 穀物市場 -->
                             <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-bavaria-blue mb-1"><i class="fas fa-store mr-2"></i><a href="https://maps.google.com/?q=Viktualienmarkt,+Munich" target="_blank" class="hover:underline">穀物市場 (Viktualienmarkt)</a></h4>
                                 <p class="text-sm text-gray-700">自 19 世紀初就存在嘅傳統露天農夫市場，前身係瑪利亞廣場嘅市集。依家有超過 100 個攤檔賣新鮮芝士、香腸、生果、鮮花及手工藝品。大人可以買杯啤酒喺樹蔭下嘆下，感受最地道嘅巴伐利亞生活氣息。</p>
                             </div>
 
-                            <!-- 森德靈大街及阿桑教堂 -->
                             <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-bavaria-blue mb-1"><i class="fas fa-cross mr-2"></i><a href="https://maps.google.com/?q=Sendlinger+Straße,+Munich" target="_blank" class="hover:underline">森德靈大街 (Sendlinger Straße)</a> & <a href="https://maps.google.com/?q=Asamkirche,+Munich" target="_blank" class="hover:underline">阿桑教堂 (Asamkirche)</a></h4>
                                 <p class="text-sm text-gray-700">沿住匯聚特色精品店嘅森德靈大街行，會發掘到隱藏於民宅之間嘅阿桑教堂。呢座由阿桑兄弟喺 18 世紀建造嘅私人教堂，內部面積雖小，但呈現出極盡奢華、金碧輝煌的洛可可 (Rococo) 風格，視覺極之震撼。<br><span class="text-blue-600 font-semibold mt-1 inline-block">(入場免費)</span></p>
@@ -240,7 +211,6 @@
                         </div>
                     </div>
 
-                    <!-- 晚餐點 -->
                     <div class="relative z-10 bg-orange-50 p-4 rounded-lg border border-orange-100">
                         <div class="absolute -left-12 bg-orange-100 text-orange-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-utensils"></i></div>
                         <h3 class="text-xl font-bold text-orange-800">晚餐：<a href="https://maps.google.com/?q=Hofbräuhaus+München" target="_blank" class="underline hover:text-orange-600"><i class="fas fa-map-marker-alt"></i> Hofbräuhaus (皇家啤酒館)</a></h3>
@@ -255,6 +225,11 @@
              <div class="bg-white rounded-xl shadow-sm p-6 relative">
                 <h2 class="text-2xl font-bold mb-6 text-bavaria-blue"><i class="fas fa-calendar-day mr-2"></i>Day 2: 7月27日 (星期一) - 探秘海倫基姆湖宮</h2>
                 
+                <!-- Day 2 專屬圖片 -->
+                <div class="mb-6 rounded-lg overflow-hidden shadow-sm border border-gray-200 aspect-video bg-gray-50">
+                    <img src="chiemsee.png" alt="" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/1920x1080/e2e8f0/64748b?text=Map+of+Chiemsee'">
+                </div>
+
                 <div class="bg-blue-50 text-blue-800 p-3 rounded-lg mb-6 text-sm flex items-center">
                     <i class="fas fa-train mr-2 text-lg"></i> 交通：使用拜仁邦票 (9:00am 後生效)。由慕尼黑火車總站 (München Hbf) 搭乘 BRB 區域火車往 Salzburg 方向。
                 </div>
@@ -361,10 +336,6 @@
                                 <a href="https://www.herrenchiemsee.de/englisch/tourist/admiss.htm" target="_blank" class="inline-block mt-3 px-4 py-2 bg-bavaria-blue text-white rounded-md hover:bg-blue-700 transition-colors shadow-sm"><i class="fas fa-external-link-alt mr-2"></i> 前往官方購票網頁</a></li>
                             </ul>
                         </div>
-
-                        <div class="mt-3 text-right">
-                            <a href="https://www.herrenchiemsee.de/englisch/tourist/index.htm" target="_blank" class="text-sm text-bavaria-blue hover:underline font-bold"><i class="fas fa-map text-gray-500 mr-1"></i> 官方宮殿與花園地圖資訊 (Click Here)</a>
-                        </div>
                     </div>
 
                     <div class="relative z-10">
@@ -402,18 +373,28 @@
         <div id="day3" class="tab-content hidden animate-fade-in">
              <div class="bg-white rounded-xl shadow-sm p-6 relative">
                 <h2 class="text-2xl font-bold mb-6 text-bavaria-blue"><i class="fas fa-calendar-day mr-2"></i>Day 3: 7月28日 (星期二) - 莫扎特故鄉薩爾斯堡</h2>
+                
+                <!-- Day 3 專屬圖片 -->
+                <div class="mb-6 rounded-lg overflow-hidden shadow-sm border border-gray-200 aspect-video bg-gray-50">
+                    <img src="salzburg.png" alt="" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/1920x1080/e2e8f0/64748b?text=Map+of+Salzburg'">
+                </div>
 
-                <div class="bg-indigo-50 text-indigo-800 p-3 rounded-lg mb-6 text-sm flex items-center border border-indigo-200 shadow-sm">
-                    <i class="fas fa-ticket-alt mr-2 text-lg"></i> 交通：使用提早預訂的 <strong class="mx-1">Super Sparpreis Gruppe</strong> 團體特價票。包含座位劃位，保證 8 人同行有位坐！
+                <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg mb-6 shadow-sm">
+                    <p class="font-bold text-red-800"><i class="fas fa-exclamation-triangle mr-2 text-lg"></i> 提早出發必讀：拜仁邦票注意事項</p>
+                    <p class="text-sm text-gray-700 mt-1">因為今日係星期二 (平日)，拜仁邦票 <strong>9:00am 後</strong> 才生效。如果搭 08:00 的火車，你需要額外購買「慕尼黑 ➔ 9:00後第一個停靠站 (通常是 Rosenheim)」的單程車票，之後的車程才可以使用拜仁邦票覆蓋；或者直接購買全段正價車票。</p>
+                </div>
+
+                <div class="bg-blue-50 text-blue-800 p-3 rounded-lg mb-6 text-sm flex items-center">
+                    <i class="fas fa-train mr-2 text-lg"></i> 交通：約 08:00 乘搭 BRB 區域火車，約 10:00 抵達 <a href="https://maps.google.com/?q=Salzburg+Hauptbahnhof" target="_blank" class="font-bold underline mx-1 hover:text-blue-600">薩爾斯堡總站</a>。
                 </div>
 
                 <div class="relative pl-10 space-y-8">
                     <div class="timeline-line"></div>
                     
                     <div class="relative z-10">
-                        <div class="absolute -left-12 bg-indigo-100 text-indigo-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-train"></i></div>
-                        <h3 class="text-xl font-bold text-gray-800">08:03：搭乘 ICE 高鐵舒適出發</h3>
-                        <p class="text-gray-600 mt-1">由慕尼黑火車總站出發，乘搭 <strong>08:03 開出的 ICE 高速列車</strong>。因為買咗團體票包埋劃位，一家八口可以舒舒服服坐定定，一站直達！車程約 1.5 小時，約 09:30 - 09:40 抵達 <a href="https://maps.google.com/?q=Salzburg+Hauptbahnhof" target="_blank" class="font-bold text-bavaria-blue hover:underline"><i class="fas fa-map-marker-alt"></i> 薩爾斯堡總站</a>。</p>
+                        <div class="absolute -left-12 bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-train"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">08:00：搭火車出發</h3>
+                        <p class="text-gray-600 mt-1">由慕尼黑火車總站出發，在火車上欣賞沿途巴伐利亞鄉村至阿爾卑斯山腳的風景。車程約 2 小時，約 10:00 到達薩爾斯堡。</p>
                     </div>
 
                     <div class="relative z-10">
@@ -460,19 +441,16 @@
                         <h3 class="text-xl font-bold text-gray-800">15:30：漫步舊城區精華廣場</h3>
                         <p class="text-sm font-semibold text-green-600 mb-2"><i class="fas fa-walking mr-1"></i> 路線：乘搭纜車回到山腳後，一路往舊城區餐廳方向行，途經以下精華打卡位：</p>
                         <div class="mt-4 space-y-4">
-                            <!-- 卡比地廣場 -->
                             <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-bavaria-blue mb-1"><i class="fas fa-globe mr-2"></i><a href="https://maps.google.com/?q=Kapitelplatz,+Salzburg" target="_blank" class="hover:underline">卡比地廣場 (Kapitelplatz)</a></h4>
                                 <p class="text-sm text-gray-700">落山後第一個到達嘅大廣場。廣場上有一個標誌性嘅巨大金球 (Sphaera)，上面企住一個男人，係極佳嘅藝術打卡位。廣場旁邊仲有巨型國際象棋盤，小朋友可以喺度睇人捉棋。由呢度低炒影上去要塞，角度極靚！</p>
                             </div>
                             
-                            <!-- 薩爾斯堡主教座堂 -->
                             <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-bavaria-blue mb-1"><i class="fas fa-church mr-2"></i><a href="https://maps.google.com/?q=Salzburg+Cathedral" target="_blank" class="hover:underline">薩爾斯堡主教座堂 (Salzburger Dom)</a></h4>
                                 <p class="text-sm text-gray-700">莫扎特喺度受洗嘅華麗巴洛克大教堂。擁有三個巨大青銅門同極靚嘅圓頂。內部非常壯觀，有五個獨立風琴。<br><span class="text-blue-600 font-semibold mt-1 inline-block">(入場需維護捐獻：成人約 €5，小童免費)</span></p>
                             </div>
 
-                            <!-- 主教宮廣場 -->
                             <div class="bg-white p-4 rounded-lg border border-gray-100 shadow-sm">
                                 <h4 class="font-bold text-bavaria-blue mb-1"><i class="fas fa-fountain mr-2"></i><a href="https://maps.google.com/?q=Residenzplatz,+Salzburg" target="_blank" class="hover:underline">主教宮廣場 (Residenzplatz)</a></h4>
                                 <p class="text-sm text-gray-700">舊城區最大嘅廣場，正中央有一個阿爾卑斯山以北最大嘅巴洛克噴泉。電影《仙樂飄飄處處聞》瑪莉亞離開修道院時，就係喺呢度一邊唱歌一邊向噴泉潑水。呢度亦有好多觀光馬車停泊。</p>
@@ -489,9 +467,9 @@
                     </div>
                     
                     <div class="relative z-10">
-                        <div class="absolute -left-12 bg-indigo-100 text-indigo-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-train"></i></div>
-                        <h3 class="text-xl font-bold text-gray-800">19:00：搭乘 RJX 列車回程慕尼黑</h3>
-                        <p class="text-gray-600 mt-1">食飽後步行或搭巴士 (約 10 分鐘) 返回薩爾斯堡總站。乘搭 <strong>19:00 開出的 RJX 66 (Railjet Xpress)</strong> 特快列車返回慕尼黑。只需搭一個站，車程約 1.5 小時 (約 20:30 抵達慕尼黑)。有專屬劃位，老人家同小朋友可以喺火車上安心休息睡覺。</p>
+                        <div class="absolute -left-12 bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-train"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">19:00：搭火車回程慕尼黑</h3>
+                        <p class="text-gray-600 mt-1">食飽後步行或搭巴士 (約 10 分鐘) 返回薩爾斯堡總站。乘搭 19:00 左右的 BRB 火車返回慕尼黑 (約 21:00 抵達)，小朋友可以在火車上休息睡覺。</p>
                     </div>
                 </div>
             </div>
@@ -502,6 +480,11 @@
              <div class="bg-white rounded-xl shadow-sm p-6 relative">
                 <h2 class="text-2xl font-bold mb-6 text-bavaria-blue"><i class="fas fa-calendar-day mr-2"></i>Day 4: 7月29日 (星期三) - 登頂德國最高峰 楚格峰</h2>
                 
+                <!-- Day 4 專屬圖片 -->
+                <div class="mb-6 rounded-lg overflow-hidden shadow-sm border border-gray-200 aspect-video bg-gray-50">
+                    <img src="zugspitze.png" alt="" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/1920x1080/e2e8f0/64748b?text=Map+of+Zugspitze'">
+                </div>
+
                 <div class="bg-red-50 text-red-800 p-3 rounded-lg mb-6 text-sm font-semibold border border-red-200 flex items-center">
                     <i class="fas fa-exclamation-triangle mr-2 text-lg"></i> 注意：即使是7月，海拔近3000米的山頂氣溫可低至接近零度！請為所有大人小朋友準備好防風防水厚外套及太陽眼鏡。
                 </div>
@@ -548,10 +531,10 @@
                             <!-- 選項 A -->
                             <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 shadow-sm flex flex-col">
                                 <h4 class="text-lg font-bold text-bavaria-blue mb-2"><i class="fas fa-beer mr-1"></i> 選項 A：提早回程慕尼黑</h4>
-                                <p class="text-sm text-gray-700 mb-3 flex-grow">適合行完雪山想早少少休息嘅選擇。直接由 Eibsee 站搭火車返回慕尼黑市區。</p>
+                                <p class="text-sm text-gray-700 mb-3 flex-grow">適合行完雪山想早少少休息嘅選擇。由 Eibsee 搭車返回 GP 鎮後轉乘火車。</p>
                                 <ul class="text-sm text-gray-600 space-y-3 mb-3">
-                                    <li><i class="fas fa-train text-gray-400 mr-1"></i> <strong>16:15 交通：</strong> 搭火車回慕尼黑 (車程約 1.5 - 2 小時，繼續用 MVV 套票)。</li>
-                                    <li><i class="fas fa-utensils text-gray-400 mr-1"></i> <strong>18:30 晚餐：</strong> <a href="https://maps.google.com/?q=Augustiner-Keller+Munich" target="_blank" class="text-bavaria-blue hover:underline font-bold"><i class="fas fa-map-marker-alt"></i> Augustiner-Keller</a>。<br>極受歡迎嘅地道露天啤酒花園 (Biergarten)，氣氛熱鬧，必試烤雞及豬手！</li>
+                                    <li><i class="fas fa-train text-gray-400 mr-1"></i> <strong>交通：</strong> 先由 Eibsee 搭齒軌火車或 Eibsee-Bus 落返 GP 火車站 (約 40 分鐘)，再轉乘直達慕尼黑嘅火車 (車程約 1.5 小時，全程繼續用 MVV 套票)。</li>
+                                    <li><i class="fas fa-utensils text-gray-400 mr-1"></i> <strong>19:00 晚餐：</strong> <a href="https://maps.google.com/?q=Augustiner-Keller+Munich" target="_blank" class="text-bavaria-blue hover:underline font-bold"><i class="fas fa-map-marker-alt"></i> Augustiner-Keller</a>。<br>極受歡迎嘅地道露天啤酒花園 (Biergarten)，氣氛熱鬧，必試烤雞及豬手！</li>
                                 </ul>
                             </div>
 
@@ -579,49 +562,45 @@
         <!-- Day 5 -->
         <div id="day5" class="tab-content hidden animate-fade-in">
              <div class="bg-white rounded-xl shadow-sm p-6 relative">
-                <h2 class="text-2xl font-bold mb-6 text-bavaria-blue"><i class="fas fa-calendar-day mr-2"></i>Day 5: 7月30日 (星期四) - 市內輕鬆遊與回程</h2>
+                <h2 class="text-2xl font-bold mb-6 text-bavaria-blue"><i class="fas fa-calendar-day mr-2"></i>Day 5: 7月30日 (星期四) - 慕尼黑購物與回程</h2>
                 
-                <div class="mt-3 bg-blue-50 p-4 rounded-lg border border-blue-100 text-sm text-gray-700 shadow-sm mb-6">
-                    <p class="font-bold text-bavaria-blue mb-1"><i class="fas fa-ticket-alt mr-1"></i> 今日交通攻略：再次使用 Airport-City-Day-Ticket (Group)</p>
-                    <p class="mb-2">無錯！今日嘅完美策略就係買返 Day 1 用過嘅「機場城市日票 (團體)」。</p>
-                    <ul class="list-disc list-inside space-y-1 ml-1 text-gray-600">
-                        <li><strong>買法：</strong> 朝早出發前，喺火車總站售票機買 <strong class="text-red-600">2 張 Airport-City-Day-Ticket (Group)</strong> (€32.60 x 2 = €65.20)。</li>
-                        <li><strong>全日任搭：</strong> 呢張飛包晒 Zone M-5。上晝你可以用佢無限次搭 U-Bahn/電車去市區景點 (如 BMW Welt、博物館)，下晝用同一張飛直接搭 S-Bahn 入機場，慳錢又慳時間！</li>
-                    </ul>
-                </div>
-
                 <div class="relative pl-10 space-y-8">
                     <div class="timeline-line"></div>
                     
                     <div class="relative z-10">
-                        <div class="absolute -left-12 bg-purple-100 text-purple-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-flask"></i></div>
-                        <h3 class="text-xl font-bold text-gray-800">上午：(三選一) 上午景點</h3>
-                        <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                            <div class="border rounded p-3 bg-gray-50">
-                                <h4 class="font-bold text-bavaria-blue">選項 A：德意志博物館</h4>
-                                <p class="text-sm text-gray-600 mt-1">世界最大科技館之一。內有專為兒童設計的「兒童王國 (Kinderreich)」，超多互動設施，女孩們必定玩得盡興。</p>
-                            </div>
-                            <div class="border rounded p-3 bg-gray-50">
-                                <h4 class="font-bold text-bavaria-blue">選項 B：BMW Welt & 奧林匹克公園</h4>
-                                <p class="text-sm text-gray-600 mt-1">免費入場，可坐進新款寶馬汽車體驗。旁邊是寬闊的奧林匹克公園，適合全家散步。</p>
-                            </div>
-                            <div class="border rounded p-3 bg-gray-50">
-                                <h4 class="font-bold text-bavaria-blue">選項 C：寧芬堡宮</h4>
-                                <p class="text-sm text-gray-600 mt-1">歷代皇室夏宮。市區搭電車直達，欣賞天鵝大運河及宛如灰姑娘童話般的「黃金馬車博物館」。</p>
-                            </div>
+                        <div class="absolute -left-12 bg-purple-100 text-purple-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-bed"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">上午：輕鬆起床與 Check-out</h3>
+                        <p class="text-gray-600 mt-1">最後一日行程相對輕鬆。於酒店享用早餐後辦理退房手續，並將大件行李寄存在酒店櫃檯。</p>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="absolute -left-12 bg-pink-100 text-pink-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-shopping-bag"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">10:30：市中心最後血拼 (Shopping)</h3>
+                        <p class="text-gray-600 mt-1">前往慕尼黑最大的步行購物街 Kaufingerstraße 及 Neuhauser Straße。<br>
+                        可以喺度買發泡膠維他命C、德國手信、百靈油，或者去 Galeria 百貨公司行街。</p>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="absolute -left-12 bg-yellow-100 text-yellow-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-utensils"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">13:00：午餐時間</h3>
+                        <p class="text-gray-600 mt-1">在舊城區享用旅程的最後一頓德國午餐，或在 Viktualienmarkt (穀物市場) 買地道小食。</p>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="absolute -left-12 bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-subway"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">15:30：返回酒店取行李及前往機場</h3>
+                        <p class="text-gray-600 mt-1">返回火車總站旁的酒店拿回行李。然後在地下層乘搭 S-Bahn (S1 或 S8 線) 前往慕尼黑機場 (MUC)，車程約需 40 分鐘。</p>
+                    </div>
+
+                    <div class="relative z-10">
+                        <div class="absolute -left-12 bg-gray-200 text-gray-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-plane-departure"></i></div>
+                        <h3 class="text-xl font-bold text-gray-800">19:40：乘搭飛機返回倫敦</h3>
+                        <div class="bg-gray-50 p-3 rounded border mt-2">
+                            <p class="text-sm text-gray-700"><strong>航班：</strong> 慕尼黑 MUC (T2) ➔ 倫敦 LHR (T2)<br>
+                            <strong>起飛時間：</strong> 19:40<br>
+                            <strong>抵達時間：</strong> 20:45 (英國時間)</p>
                         </div>
-                    </div>
-
-                    <div class="relative z-10">
-                        <div class="absolute -left-12 bg-gray-200 text-gray-700 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-suitcase-rolling"></i></div>
-                        <h3 class="text-xl font-bold text-gray-800">下午：準備回程</h3>
-                        <p class="text-gray-600 mt-1">返回 <strong>Hotel NH Collection München Bavaria</strong> 提取行李。大約下午 4:30 吃過簡單晚餐/小食後，乘搭 S-Bahn (S1 或 S8) 前往慕尼黑機場 (MUC T2) 辦理登機手續。</p>
-                    </div>
-
-                    <div class="relative z-10">
-                        <div class="absolute -left-12 bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-plane-departure"></i></div>
-                        <h3 class="text-xl font-bold text-gray-800">傍晚：滿載而歸</h3>
-                        <p class="text-gray-600 mt-1">乘搭航班 (19:40 起飛) 返回英國倫敦希思路機場 (LHR T2, 20:45 抵達)，結束愉快的巴伐利亞及奧地利之旅！</p>
+                        <p class="text-sm font-bold text-bavaria-blue mt-2">滿載開心回憶，旅程完滿結束！</p>
                     </div>
                 </div>
             </div>
@@ -657,3 +636,5 @@
     </script>
 </body>
 </html>
+
+
